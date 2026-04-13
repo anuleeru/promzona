@@ -1,0 +1,589 @@
+/* ===== Zone A 3D specific styles ===== */
+
+.zone3d-full { width: 100%; }
+
+/* ====== TOP VIEW ====== */
+.za-top-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Roads */
+.za-road {
+  background: #2d3340;
+  border: 1px solid #4B556333;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.za-road-entry, .za-road-exit-bottom {
+  width: 100%;
+  max-width: 800px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Shorter entry/exit roads */
+.za-road-entry-short, .za-road-exit-short {
+  width: 100%;
+  max-width: 500px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.za-road-dashes {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.za-dash-h {
+  width: 20px;
+  height: 3px;
+  background: #F59E0B66;
+  border-radius: 1px;
+}
+.za-road-dashes-v {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 0;
+}
+.za-dash-v {
+  width: 3px;
+  height: 16px;
+  background: #F59E0B66;
+  border-radius: 1px;
+}
+.za-road-truck {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  animation: zaMoveTruck 3s infinite ease-in-out;
+}
+@keyframes zaMoveTruck {
+  0%   { left: 5%; opacity: 0.2; }
+  50%  { left: 50%; opacity: 1; }
+  100% { left: 90%; opacity: 0; }
+}
+.za-road-label-left {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.68rem;
+  color: #666d99;
+}
+.za-road-label-right {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.68rem;
+  color: #8B5CF6;
+  font-weight: 700;
+}
+
+/* Lanes to/from scales (vertical, short, with trucks) */
+.za-lane-to-scales, .za-lane-from-scales {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  padding: 2px 0;
+}
+.za-lane-dashes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+.za-lane-truck-down {
+  font-size: 1.3rem;
+  animation: laneDown 2s infinite ease-in-out;
+}
+@keyframes laneDown {
+  0%, 100% { opacity: 0.3; transform: translateY(-4px); }
+  50% { opacity: 1; transform: translateY(4px); }
+}
+.za-lane-hint {
+  font-size: 0.55rem;
+  color: #666d99;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Barriers (horizontal, top view) */
+.za-barrier-h {
+  width: 100%;
+  max-width: 800px;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.za-barrier-row-h {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+}
+.za-barrier-pole-h {
+  width: 8px;
+  height: 28px;
+  background: linear-gradient(180deg, #EF4444, #7F1D1D);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+.za-barrier-arm-h {
+  width: 320px;
+  max-width: 60vw;
+  height: 7px;
+  background: repeating-linear-gradient(90deg, #EF4444 0px, #EF4444 12px, #fff 12px, #fff 20px);
+  border-radius: 3px;
+  animation: barrierPulse 3s infinite;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+@keyframes barrierPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.za-barrier-label-h {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #EF4444;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Cameras row */
+.za-cams-row {
+  display: flex;
+  gap: 12px;
+}
+.za-cam {
+  padding: 6px 14px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #1e3050;
+  border: 1px solid #3B82F655;
+  border-radius: 6px;
+  color: #60a5fa;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.za-cam:hover { background: #243a60; transform: scale(1.05); }
+.za-cam-qr { background: #2d1f54; border-color: #8B5CF655; color: #a78bfa; }
+.za-cam-qr:hover { background: #3a2870; }
+
+/* Main area — top view layout */
+.za-main-area {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  max-width: 800px;
+  min-height: 400px;
+  background: #141824;
+  border: 2px solid #3B82F622;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Container top-down view */
+.za-container-top {
+  width: 200px;
+  flex-shrink: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.za-container-top:hover { background: #1a2040; }
+.za-container-left {
+  background: #15223a;
+  border-right: 2px solid #3B82F644;
+}
+.za-container-right {
+  background: #1f1a10;
+  border-left: 2px solid #F59E0B44;
+}
+.za-ct-floor {
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #9ba3c7;
+  text-align: center;
+}
+.za-container-left .za-ct-floor { background: #1a2e50; border: 1px solid #3B82F633; }
+.za-container-right .za-ct-floor { background: #2a1e0a; border: 1px solid #F59E0B33; }
+.za-ct-label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: auto;
+  padding-top: 8px;
+}
+.za-container-left .za-ct-label { color: #3B82F6; }
+.za-container-right .za-ct-label { color: #F59E0B; }
+.za-ct-click {
+  font-size: 0.6rem;
+  color: #F59E0B;
+  text-align: center;
+  opacity: 0.6;
+  animation: blinky 2s infinite;
+}
+@keyframes blinky {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Road center (vertical in top view — just scale) */
+.za-road-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.za-scale-top {
+  position: relative;
+  cursor: pointer;
+  padding: 8px;
+}
+.za-scale-surface {
+  padding: 16px 24px;
+  background: #0d2520;
+  border: 2px dashed #10B981;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #10B981;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(16,185,129,0.15);
+}
+.za-truck-on {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* ====== FRONT VIEW ====== */
+.za-front-view {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px 20px;
+  min-height: 400px;
+  width: 100%;
+  background: linear-gradient(180deg, #0f1320 0%, #141824 60%, #1a1f2e 100%);
+  border-radius: 12px;
+  border: 1px solid #3B82F622;
+}
+
+/* Front container stacks */
+.za-front-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 240px;
+}
+.za-front-container {
+  padding: 14px;
+  border-radius: 0;
+  position: relative;
+}
+.za-fc-2fl { border-top: 3px solid; border-radius: 8px 8px 0 0; }
+.za-fc-1fl { border-radius: 0 0 8px 8px; }
+.za-fc-left {
+  background: #15223a;
+  border: 1px solid #3B82F644;
+}
+.za-fc-left.za-fc-2fl { border-top-color: #3B82F6; }
+.za-fc-right {
+  background: #1f1a10;
+  border: 1px solid #F59E0B44;
+}
+.za-fc-right.za-fc-2fl { border-top-color: #F59E0B; }
+.za-fc-label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.za-fc-left .za-fc-label { color: #3B82F6; }
+.za-fc-right .za-fc-label { color: #F59E0B; }
+.za-fc-rooms {
+  display: flex;
+  gap: 4px;
+}
+.za-fc-room {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 0.62rem;
+  color: #9ba3c7;
+  text-align: center;
+  line-height: 1.4;
+}
+.za-fc-left .za-fc-room { background: #1a2e50; border: 1px solid #3B82F622; }
+.za-fc-right .za-fc-room { background: #2a1e0a; border: 1px solid #F59E0B22; }
+
+/* Front center — road + scale + barrier under + exit */
+.za-front-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  min-width: 140px;
+}
+.za-front-road {
+  width: 100px;
+  height: 300px;
+  background: #2d3340;
+  border: 1px solid #4B556333;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+}
+.za-front-scale {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #10B981;
+  padding: 10px;
+  border: 2px dashed #10B981;
+  border-radius: 6px;
+  background: #0d2520;
+}
+.za-front-truck {
+  font-size: 2.5rem;
+  opacity: 0.3;
+}
+
+/* Barrier under scales (front view) */
+.za-front-barrier-under {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100px;
+  padding: 8px 0;
+  background: #1c1015;
+  border: 1px solid #EF444444;
+  border-radius: 0 0 6px 6px;
+}
+.za-fbu-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+.za-fbu-arm {
+  width: 70px;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, #EF4444 0px, #EF4444 8px, #fff 8px, #fff 14px);
+  border-radius: 2px;
+  animation: barrierPulse 3s infinite;
+}
+@keyframes barrierPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.za-fbu-pole {
+  width: 6px;
+  height: 24px;
+  background: linear-gradient(180deg, #EF4444, #7F1D1D);
+  border-radius: 3px;
+}
+.za-fbu-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: #EF4444;
+  white-space: nowrap;
+}
+
+/* Exit label under barrier (front view) */
+.za-front-exit-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0 4px;
+}
+.za-fel-arrow {
+  font-size: 1.2rem;
+  color: #8B5CF6;
+  animation: arrowDown 1.5s infinite;
+}
+@keyframes arrowDown {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(3px); }
+}
+.za-fel-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8B5CF6;
+  white-space: nowrap;
+}
+
+/* ====== CONTAINER DETAIL OVERLAY ====== */
+.za-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,12,20,0.8);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.15s ease;
+}
+.za-detail-panel {
+  background: #1a1e2e;
+  border: 2px solid #F59E0B44;
+  border-radius: 16px;
+  width: 700px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 0;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.8);
+}
+.za-dp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #2e3450;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #F59E0B;
+}
+.za-dp-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: #2a2f45;
+  border: 1px solid #3d4463;
+  color: #9ba3c7;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.za-dp-close:hover { background: #3d4463; color: #fff; }
+
+.za-dp-floor {
+  padding: 20px 24px;
+  border-bottom: 1px solid #2e3450;
+}
+.za-dp-floor-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #F59E0B;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.za-dp-zones {
+  display: flex;
+  gap: 10px;
+}
+.za-dp-zone {
+  flex: 1;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #3d4463;
+  background: #232838;
+}
+.za-dp-zone-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.za-dp-zone-name { font-size: 0.82rem; font-weight: 700; color: #e8eaf6; margin-bottom: 4px; }
+.za-dp-zone-desc { font-size: 0.7rem; color: #9ba3c7; line-height: 1.5; }
+
+.za-dp-zone-server { border-left: 3px solid #3B82F6; }
+.za-dp-zone-store  { border-left: 3px solid #8B5CF6; }
+.za-dp-zone-guard  { border-left: 3px solid #10B981; }
+.za-dp-zone-1c     { border-left: 3px solid #F59E0B; }
+
+/* Arrow between floors */
+.za-dp-arrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #161a28;
+}
+.za-dp-arrow-icon {
+  font-size: 1.5rem;
+  color: #10B981;
+  animation: arrowPulse 1.5s infinite;
+}
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.5; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(4px); }
+}
+.za-dp-arrow-text {
+  font-size: 0.78rem;
+  color: #10B981;
+  font-weight: 600;
+}
+
+/* Output items */
+.za-dp-output {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+.za-dp-output-item {
+  padding: 8px 12px;
+  background: #1a2535;
+  border: 1px solid #F59E0B33;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: #F59E0B;
+  font-weight: 600;
+}
+
+/* Result */
+.za-dp-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #0d2520;
+  border-top: 2px solid #10B98133;
+  border-radius: 0 0 14px 14px;
+}
+.za-dp-result-icon { font-size: 1.5rem; }
+.za-dp-result-text { font-size: 0.78rem; color: #9ba3c7; line-height: 1.5; }
+.za-dp-result-text strong { color: #8B5CF6; }

@@ -1,0 +1,51 @@
+.sidebar {
+  width: 420px;
+  flex-shrink: 0;
+  background: #232838;
+  border-left: 1px solid #3d4463;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  animation: slideIn 0.22s ease;
+}
+
+.sidebar--wide {
+  width: 560px;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+.sidebar-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #2a2f45;
+  border: 1px solid #3d4463;
+  color: #9ba3c7;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.15s;
+}
+
+.sidebar-close:hover {
+  background: #3d4463;
+  color: #e8eaf6;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  padding-top: 48px;
+}

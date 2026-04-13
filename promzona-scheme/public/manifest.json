@@ -1,0 +1,21 @@
+{
+  "name": "Промзона Кара-Кече — Схема автоматизации",
+  "short_name": "Промзона КК",
+  "description": "Угольная база Кара-Кече. Схема автоматизации. Кыргызкомур",
+  "icons": [
+    {
+      "src": "/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0f1320",
+  "background_color": "#0f1320"
+}

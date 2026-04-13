@@ -1,0 +1,148 @@
+.zone-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,12,20,0.92);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  animation: fadeIn 0.2s ease;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.zone-modal {
+  background: #1a1e2e;
+  border: none;
+  border-radius: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: none;
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.zm-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 32px;
+  border-bottom: 1px solid #2e3450;
+  flex-shrink: 0;
+  background: #161a28;
+}
+
+.zm-badge {
+  padding: 4px 12px;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.zm-title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e8eaf6;
+}
+
+.zm-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #2a2f45;
+  border: 1px solid #3d4463;
+  color: #9ba3c7;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.zm-close:hover {
+  background: #3d4463;
+  color: #e8eaf6;
+}
+
+.zm-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 40px;
+}
+
+/* View selector tabs inside modal */
+.zm-view-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid #2e3450;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.zm-view-tab {
+  padding: 8px 18px;
+  background: #232838;
+  border: 1px solid #3d4463;
+  border-radius: 8px;
+  color: #9ba3c7;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.zm-view-tab:hover { background: #2e3450; color: #e8eaf6; }
+.zm-view-tab.active {
+  background: var(--tab-bg, #1e3050);
+  border-color: var(--tab-color, #3B82F6);
+  color: var(--tab-color, #3B82F6);
+}
+
+/* 3D Scene container */
+.scene-3d {
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 480px;
+  position: relative;
+}
+
+.iso-view {
+  transform-style: preserve-3d;
+  transform: rotateX(55deg) rotateZ(-45deg);
+  transition: transform 0.5s ease;
+  position: relative;
+}
+.iso-view.front {
+  transform: rotateX(10deg) rotateY(-5deg);
+}
+.iso-view.back {
+  transform: rotateX(10deg) rotateY(175deg);
+}
+.iso-view.left-view {
+  transform: rotateX(10deg) rotateY(85deg);
+}
+.iso-view.right-view {
+  transform: rotateX(10deg) rotateY(-85deg);
+}
+.iso-view.top-view {
+  transform: rotateX(55deg) rotateZ(-45deg);
+}

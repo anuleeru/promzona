@@ -1,0 +1,210 @@
+import { useState } from 'react'
+import './OverviewMap.css'
+
+/*
+  Real top-down view.
+  Layout (left → right): Entry Road → Zone A → Road → Zone B (BIG) → Road → Zone C → Road → Zone D
+  Lane 7 exits from Zone C going as oncoming traffic OUTSIDE Zones A & B (top of the map).
+*/
+
+function ZoneBlock({ id, label, sublabel, color, glow, children, isActive, onClick }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <div
+      className={`ov-zone ov-zone--${id.toLowerCase()} ${isActive ? 'ov-zone--active' : ''}`}
+      style={{ '--zc': color, '--zg': glow }}
+      onClick={() => onClick(id)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="ov-zone-header">
+        <span className="ov-zone-label">{label}</span>
+        <span className="ov-zone-sub">{sublabel}</span>
+      </div>
+      <div className="ov-zone-body">{children}</div>
+      <div className={`ov-zone-hint ${hovered ? 'vis' : ''}`}>Нажмите для деталей →</div>
+    </div>
+  )
+}
+
+function RoadSeg({ label, vertical }) {
+  return (
+    <div className={`ov-road ${vertical ? 'ov-road--v' : ''}`}>
+      <div className="ov-road-dashes">
+        {[...Array(6)].map((_, i) => <div key={i} className="ov-rd" />)}
+      </div>
+      {label && <span className="ov-road-lbl">{label}</span>}
+    </div>
+  )
+}
+
+/* ---- Mini Zone A (top-down) ---- */
+function MiniA() {
+  return (
+    <div className="m-a">
+      <div className="m-a-barrier">🚧 Шлагбаум</div>
+      <div className="m-a-cams">📷 ANPR · 📱 QR</div>
+      <div className="m-a-main">
+        <div className="m-a-cont m-a-left">
+          <div>🖥️ Офис</div>
+          <div>🗄️ Склад</div>
+        </div>
+        <div className="m-a-scale">⚖️ ВЕСЫ</div>
+        <div className="m-a-cont m-a-right">
+          <div>💻 1С</div>
+          <div>📷 Камеры</div>
+        </div>
+      </div>
+      <div className="m-a-barrier">🚧 Шлагбаум</div>
+    </div>
+  )
+}
+
+/* ---- Mini Zone B (top-down, BIG — 5 long lanes) ---- */
+function MiniB() {
+  const lanes = [
+    { id: 1, label: '1 ТОП‑базы', c: '#3B82F6' },
+    { id: 2, label: '2 ТОП‑базы', c: '#3B82F6' },
+    { id: 3, label: '3 ТОП‑базы', c: '#3B82F6' },
+    { id: 4, label: '4 ТЭЦ',      c: '#EF4444' },
+    { id: 5, label: '5 Соц/МСУ/Служ',  c: '#10B981' },
+  ]
+  return (
+    <div className="m-b">
+      {lanes.map(l => (
+        <div key={l.id} className="m-b-lane" style={{ '--lc': l.c }}>
+          <span className="m-b-barrier">🚧</span>
+          <span className="m-b-label">{l.label}</span>
+          <div className="m-b-dots">{[...Array(8)].map((_, i) => <span key={i} className="m-b-dot" />)}</div>
+          <span className="m-b-truck">🚛</span>
+          <span className="m-b-barrier">🚧</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+/* ---- Mini Zone C (top-down: upper/lower containers, LED strip) ---- */
+function MiniC() {
+  return (
+    <div className="m-c">
+      <div className="m-c-cont upper">📺 LED · Верхний конт.</div>
+      <div className="m-c-road-between">дорога</div>
+      <div className="m-c-cont lower">🛡️ Охрана · Нижний конт.</div>
+      <div className="m-c-barrier">🚧 Шлагбаум →</div>
+    </div>
+  )
+}
+
+/* ---- Mini Zone D (top-down: scale-cont-cont-scale-cont-scale) ---- */
+function MiniD() {
+  const items = [
+    { t: 's', l: '⚖️ Весы 1' },
+    { t: 'c', l: '💻 Конт. 1' },
+    { t: 'c', l: '💻 Конт. 2' },
+    { t: 's', l: '⚖️ Весы 2' },
+    { t: 'c', l: '💻 Конт. 3' },
+    { t: 's', l: '⚖️ Весы 3' },
+  ]
+  return (
+    <div className="m-d">
+      {items.map((it, i) => (
+        <div key={i} className={`m-d-item ${it.t === 's' ? 'm-d-scale' : 'm-d-cont'}`}>{it.l}</div>
+      ))}
+    </div>
+  )
+}
+
+/* ---- Main overview ---- */
+export default function OverviewMap({ activeZone, onSelectZone }) {
+  return (
+    <div className="overview-map">
+      {/* Title */}
+      <div className="map-title">
+        <h1>Промзона Кара-Кече — Вид сверху</h1>
+        <p>Нажмите на зону для детального просмотра</p>
+      </div>
+
+      {/* Legend */}
+      <div className="map-legend">
+        <div className="legend-item"><span className="legend-dot" style={{ background: '#3B82F6' }} /> Зона А</div>
+        <div className="legend-item"><span className="legend-dot" style={{ background: '#8B5CF6' }} /> Зона Б</div>
+        <div className="legend-item"><span className="legend-dot" style={{ background: '#10B981' }} /> Зона С</div>
+        <div className="legend-item"><span className="legend-dot" style={{ background: '#F59E0B' }} /> Зона Д</div>
+        <div className="legend-item"><span className="legend-dot" style={{ background: '#EF444466', border: '1px dashed #EF4444' }} /> Полоса 6 (встречка)</div>
+      </div>
+
+      {/* ===== Main zones row ===== */}
+      <div className="ov-zones-row">
+        {/* Entry */}
+        <div className="ov-entry">
+          <div className="ov-entry-trucks">
+            {[...Array(3)].map((_, i) => <span key={i} className="ov-truck-icon">🚛</span>)}
+          </div>
+          <div className="ov-entry-label">Въезд с<br/>трассы</div>
+        </div>
+
+        <RoadSeg label="→" />
+
+        {/* Zone A */}
+        <ZoneBlock id="A" label="ЗОНА А" sublabel="Въезд · Весы · Проверка" color="#3B82F6" glow="rgba(59,130,246,0.35)" isActive={activeZone === 'A'} onClick={onSelectZone}>
+          <MiniA />
+        </ZoneBlock>
+
+        <RoadSeg label="→" />
+
+        {/* Zone B — BIG */}
+        <ZoneBlock id="B" label="ЗОНА Б" sublabel="5 полос · Электронная очередь" color="#8B5CF6" glow="rgba(139,92,246,0.35)" isActive={activeZone === 'B'} onClick={onSelectZone}>
+          <MiniB />
+        </ZoneBlock>
+
+        <RoadSeg label="→" />
+
+        {/* Zone C */}
+        <ZoneBlock id="C" label="ЗОНА С" sublabel="Вызов · LED · Выпуск" color="#10B981" glow="rgba(16,185,129,0.35)" isActive={activeZone === 'C'} onClick={onSelectZone}>
+          <MiniC />
+        </ZoneBlock>
+
+        <RoadSeg label="→" />
+
+        {/* Zone D */}
+        <ZoneBlock id="D" label="ЗОНА Д" sublabel="3 весовых · Полная тара" color="#F59E0B" glow="rgba(245,158,11,0.35)" isActive={activeZone === 'D'} onClick={onSelectZone}>
+          <MiniD />
+        </ZoneBlock>
+      </div>
+
+      {/* ===== Lane 7 — from Zone C, under Zones B and A ===== */}
+      <div className="lane7-wrapper">
+        <div className="lane7-spacer-left">
+          <div className="lane7-entry-ghost"></div>
+          <div className="lane7-road-ghost"></div>
+        </div>
+        <div className="lane7-bottom">
+          <div className="lane7-track">
+            <span className="lane7-exit-dir">Выход ←</span>
+            <div className="lane7-dashes">
+              {[...Array(30)].map((_, i) => <div key={i} className="lane7-dash" />)}
+            </div>
+            <span className="lane7-truck-anim">🚛←</span>
+          </div>
+          <div className="lane7-label">ПОЛОСА 6 — встречка · из Зоны С → под Б → под А → выход</div>
+        </div>
+        <div className="lane7-spacer-right">
+          <div className="lane7-road-ghost"></div>
+          <div className="lane7-zone-d-ghost"></div>
+        </div>
+      </div>
+
+      {/* System badges */}
+      <div className="system-badges">
+        <div className="sys-badge">📷 ANPR‑камеры</div>
+        <div className="sys-badge">📱 QR‑сканеры</div>
+        <div className="sys-badge">🚧 Авто‑шлагбаумы</div>
+        <div className="sys-badge">⚖️ Весы 1С</div>
+        <div className="sys-badge">📺 LED‑экран</div>
+        <div className="sys-badge">🗄️ ЦУК&amp;Л Кыргызкомур</div>
+        <div className="sys-badge">📋 Электронная очередь</div>
+      </div>
+    </div>
+  )
+}

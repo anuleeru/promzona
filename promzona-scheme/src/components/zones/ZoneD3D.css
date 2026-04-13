@@ -1,0 +1,213 @@
+/* ===== Zone D specific styles ===== */
+
+/* ====== TOP VIEW ====== */
+.zd-top-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  width: 100%;
+}
+
+.zd-top-road-entry, .zd-top-exit-info {
+  width: 100%;
+  max-width: 700px;
+}
+.zd-road-h {
+  width: 100%;
+  height: 48px;
+  background: #2d3340;
+  border: 1px solid #4B556333;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zd-road-dashes-h {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.zd-entry-label {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  color: #10B981;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.zd-exit-label-bottom {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  color: #10B981;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Alternating layout */
+.zd-alternating {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Scale (top view) */
+.zd-top-scale {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #0d2520;
+  border: 2px dashed #10B981;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.zd-top-scale:hover {
+  transform: translateX(4px);
+  box-shadow: 0 0 20px rgba(16,185,129,0.15);
+}
+.zd-ts-cam {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #3B82F6;
+  padding: 6px 10px;
+  background: #1e3050;
+  border-radius: 6px;
+  border: 1px solid #3B82F633;
+  white-space: nowrap;
+}
+.zd-ts-platform {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.zd-ts-icon { font-size: 1.4rem; }
+.zd-ts-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #10B981;
+  letter-spacing: 0.04em;
+}
+.zd-ts-truck {
+  font-size: 1.2rem;
+  margin-left: auto;
+  opacity: 0.5;
+}
+
+/* Container (top view) */
+.zd-top-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #1f1a10;
+  border: 1px solid #F59E0B44;
+  border-left: 4px solid #F59E0B;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.zd-top-container:hover {
+  transform: translateX(4px);
+  box-shadow: 0 0 20px rgba(245,158,11,0.12);
+}
+.zd-tc-icon { font-size: 1.4rem; }
+.zd-tc-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #F59E0B;
+}
+.zd-tc-person {
+  font-size: 0.72rem;
+  color: #9ba3c7;
+  margin-left: auto;
+}
+
+/* ====== FRONT VIEW ====== */
+.zd-front-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 30px 20px;
+  width: 100%;
+  background: linear-gradient(180deg, #0f1320 0%, #141824 60%, #1a1f2e 100%);
+  border-radius: 12px;
+  border: 1px solid #F59E0B22;
+}
+
+.zd-fv-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.zd-fv-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 110px;
+}
+.zd-fv-platform {
+  width: 90px;
+  height: 60px;
+  background: #0d2520;
+  border: 2px dashed #10B981;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.zd-fv-box {
+  width: 90px;
+  height: 80px;
+  background: #1f1a10;
+  border: 1px solid #F59E0B55;
+  border-left: 3px solid #F59E0B;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.zd-fv-lbl {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+}
+.zd-fv-scale .zd-fv-lbl { color: #10B981; }
+.zd-fv-cont .zd-fv-lbl { color: #F59E0B; }
+.zd-fv-cam {
+  font-size: 0.55rem;
+  color: #3B82F6;
+  font-weight: 600;
+}
+.zd-fv-person {
+  font-size: 0.55rem;
+  color: #9ba3c7;
+}
+.zd-fv-road-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 700px;
+  background: #2d3340;
+  border-radius: 4px;
+  justify-content: center;
+}
