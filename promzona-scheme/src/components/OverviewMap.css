@@ -9,13 +9,14 @@
 }
 
 /* Title */
-.map-title { text-align: center; }
+.map-title { text-align: start; }
 .map-title h1 {
   font-size: 1.4rem;
   font-weight: 700;
   color: #f0f4ff;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  
 }
 .map-title p { font-size: 0.76rem; color: #485f7a; margin-top: 5px; letter-spacing: 0.02em; }
 
@@ -23,7 +24,7 @@
 .map-legend {
   display: flex;
   gap: 18px;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
 }
 .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: #7a98bc; }
@@ -109,7 +110,9 @@
   justify-content: center;
   gap: 0;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  /* overflow-x: auto; */
+  min-width: max-content;
+  padding: 10px;
 }
 
 /* Entry trucks */
@@ -330,7 +333,7 @@
 
 /* System badges */
 .system-badges {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
@@ -505,7 +508,7 @@
 
 /* System badges */
 .system-badges {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
@@ -625,7 +628,7 @@
   gap: 6px;
   margin-top: 4px;
   padding: 10px 0 4px;
-  border-top: 1px dashed #1c2b44;
+  /* border-top: 1px dashed #1c2b44; */
 }
 .ov-top-zone-label {
   font-size: 0.62rem;
