@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import Tooltip from '../Tooltip'
 import './Zone3D.css'
 import './ZoneD3D.css'
@@ -36,7 +36,7 @@ export default function ZoneD3D() {
           <button
             key={v.id}
             className={`zm-view-tab ${view === v.id ? 'active' : ''}`}
-            style={{ '--tab-color': '#F59E0B', '--tab-bg': '#2a1e0a' }}
+            style={{ '--tab-color': '#93c5fd', '--tab-bg': '#2a1e0a' }}
             onClick={() => setView(v.id)}
           >{v.label}</button>
         ))}
@@ -84,9 +84,9 @@ export default function ZoneD3D() {
 
           {/* Exit */}
           <div className="zd-top-exit-info">
-            <div className="zd-road-h" style={{ background: '#1a2d28', borderColor: '#10B98144' }}>
+            <div className="zd-road-h" style={{ background: '#1a2d28', borderColor: '#4b9eff44' }}>
               <div className="zd-road-dashes-h">
-                {[...Array(14)].map((_, i) => <div key={i} className="za-dash-h" style={{ background: '#10B98166' }} />)}
+                {[...Array(14)].map((_, i) => <div key={i} className="za-dash-h" style={{ background: '#4b9eff66' }} />)}
               </div>
               <div className="zd-exit-label-bottom">→ Обратно в Зону С → Шлагбаум → ВЫЕЗД</div>
             </div>
@@ -122,7 +122,7 @@ export default function ZoneD3D() {
           </div>
           <div className="zd-fv-road-bottom">
             <div className="za-dash-h" /><div className="za-dash-h" /><div className="za-dash-h" />
-            <span style={{ fontSize: '0.68rem', color: '#666d99' }}>← ДОРОГА →</span>
+            <span style={{ fontSize: '0.68rem', color: '#485f7a' }}>← ДОРОГА →</span>
             <div className="za-dash-h" /><div className="za-dash-h" /><div className="za-dash-h" />
           </div>
         </div>
@@ -132,21 +132,21 @@ export default function ZoneD3D() {
       <div className="zone3d-info">
         <div className="z3d-info-grid">
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#F59E0B' }}>⚖️</div>
+            <div className="z3d-ic-icon" style={{ color: '#93c5fd' }}>⚖️</div>
             <div>
               <div className="z3d-ic-title">3 весовых</div>
               <div className="z3d-ic-text">Полная тара. Нетто = Полная − Пустая</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#F59E0B' }}>💻</div>
+            <div className="z3d-ic-icon" style={{ color: '#93c5fd' }}>💻</div>
             <div>
               <div className="z3d-ic-title">3 контейнера</div>
               <div className="z3d-ic-text">1С-специалисты. Данные → ЦУК&amp;Л Кыргызкомур</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#3B82F6' }}>📷</div>
+            <div className="z3d-ic-icon" style={{ color: '#4b9eff' }}>📷</div>
             <div>
               <div className="z3d-ic-title">3 камеры</div>
               <div className="z3d-ic-text">По 1 на каждые весы. Фиксация номера ТС</div>

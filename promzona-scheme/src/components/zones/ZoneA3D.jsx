@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import Tooltip from '../Tooltip'
 import './Zone3D.css'
 import './ZoneA3D.css'
@@ -20,7 +20,7 @@ export default function ZoneA3D() {
           <button
             key={v.id}
             className={`zm-view-tab ${view === v.id ? 'active' : ''}`}
-            style={{ '--tab-color': '#3B82F6', '--tab-bg': '#1e3050' }}
+            style={{ '--tab-color': '#4b9eff', '--tab-bg': '#1e3050' }}
             onClick={() => setView(v.id)}
           >{v.label}</button>
         ))}
@@ -60,10 +60,10 @@ export default function ZoneA3D() {
           <Tooltip title="🚧 Шлагбаум к весам А-ШЛ-1В" text="Открывается после первичной проверки. Въезд на весы." side="bottom">
             <div className="za-barrier-h za-barrier-scales">
               <div className="za-barrier-row-h">
-                <div className="za-barrier-pole-h" style={{ background: 'linear-gradient(180deg, #10B981, #065F46)' }} />
-                <div className="za-barrier-arm-h" style={{ background: 'repeating-linear-gradient(90deg, #10B981 0px, #10B981 12px, #fff 12px, #fff 20px)' }} />
+                <div className="za-barrier-pole-h" style={{ background: 'linear-gradient(180deg, #4b9eff, #065F46)' }} />
+                <div className="za-barrier-arm-h" style={{ background: 'repeating-linear-gradient(90deg, #4b9eff 0px, #4b9eff 12px, #fff 12px, #fff 20px)' }} />
               </div>
-              <div className="za-barrier-label-h" style={{ color: '#10B981' }}>🚧 К ВЕСАМ А-ШЛ-1В</div>
+              <div className="za-barrier-label-h" style={{ color: '#4b9eff' }}>🚧 К ВЕСАМ А-ШЛ-1В</div>
             </div>
           </Tooltip>
 
@@ -103,10 +103,10 @@ export default function ZoneA3D() {
           <Tooltip title="🚧 Шлагбаум от весов А-ШЛ-1Е" text="Открывается после взвешивания и выдачи накладной + талона." side="top">
             <div className="za-barrier-h za-barrier-scales">
               <div className="za-barrier-row-h">
-                <div className="za-barrier-pole-h" style={{ background: 'linear-gradient(180deg, #10B981, #065F46)' }} />
-                <div className="za-barrier-arm-h" style={{ background: 'repeating-linear-gradient(90deg, #10B981 0px, #10B981 12px, #fff 12px, #fff 20px)' }} />
+                <div className="za-barrier-pole-h" style={{ background: 'linear-gradient(180deg, #4b9eff, #065F46)' }} />
+                <div className="za-barrier-arm-h" style={{ background: 'repeating-linear-gradient(90deg, #4b9eff 0px, #4b9eff 12px, #fff 12px, #fff 20px)' }} />
               </div>
-              <div className="za-barrier-label-h" style={{ color: '#10B981' }}>🚧 ОТ ВЕСОВ А-ШЛ-1Е</div>
+              <div className="za-barrier-label-h" style={{ color: '#4b9eff' }}>🚧 ОТ ВЕСОВ А-ШЛ-1Е</div>
             </div>
           </Tooltip>
 
@@ -259,28 +259,28 @@ export default function ZoneA3D() {
       <div className="zone3d-info">
         <div className="z3d-info-grid">
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#3B82F6' }}>📷</div>
+            <div className="z3d-ic-icon" style={{ color: '#4b9eff' }}>📷</div>
             <div>
               <div className="z3d-ic-title">4 камеры</div>
               <div className="z3d-ic-text">ANPR въезд · QR-сканер · Вид спереди фото · Верхняя фото</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#EF4444' }}>🚧</div>
+            <div className="z3d-ic-icon" style={{ color: '#4b9eff' }}>🚧</div>
             <div>
               <div className="z3d-ic-title">2 шлагбаума</div>
               <div className="z3d-ic-text">А-ШЛ-1 (ANPR+QR) · А-ШЛ-2 (подтверждение 1С + СБ)</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#10B981' }}>⚖️</div>
+            <div className="z3d-ic-icon" style={{ color: '#4b9eff' }}>⚖️</div>
             <div>
               <div className="z3d-ic-title">Весовая платформа</div>
               <div className="z3d-ic-text">Между контейнерами. Тонар с прицепом. Пустая тара</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#F59E0B' }}>🏢</div>
+            <div className="z3d-ic-icon" style={{ color: '#93c5fd' }}>🏢</div>
             <div>
               <div className="z3d-ic-title">Контейнер 2 — кликабельный</div>
               <div className="z3d-ic-text">Серверная + Склад + Охранник СБ → 1С-специалист</div>

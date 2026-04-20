@@ -1,4 +1,4 @@
-import './Sidebar.css'
+﻿import './Sidebar.css'
 
 export default function Sidebar({ children, onClose, wide }) {
   return (

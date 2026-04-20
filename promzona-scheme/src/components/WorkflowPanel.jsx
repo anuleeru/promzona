@@ -1,8 +1,8 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { WORKFLOW_STEPS, SYSTEM_EQUIPMENT } from '../data/zones'
 import './WorkflowPanel.css'
 
-const ZONE_COLORS = { A: '#3B82F6', B: '#8B5CF6', C: '#10B981', D: '#F59E0B' }
+const ZONE_COLORS = { A: '#4b9eff', B: '#60a5fa', C: '#4b9eff', D: '#93c5fd', Wait: '#60a5fa', E: '#4b9eff', Top: '#7ab8ff' }
 
 export default function WorkflowPanel() {
   const [expanded, setExpanded] = useState(null)
@@ -20,19 +20,27 @@ export default function WorkflowPanel() {
     <div className="workflow-panel">
       {/* Flow diagram */}
       <div className="wf-flow">
-        {['А', 'Б', 'С', 'Д', 'С'].map((zone, i) => (
+        {[
+          { key: 'A', label: 'Зона А' },
+          { key: 'B', label: 'Зона Б' },
+          { key: 'C', label: 'Зона С' },
+          { key: 'Wait', label: 'Ожидание' },
+          { key: 'E', label: 'Зона Е' },
+          { key: 'D', label: 'Зона Д' },
+          { key: 'C2', label: 'Зона С↩' },
+        ].map((item, i, arr) => (
           <div key={i} className="wf-flow-item">
             <div
               className="wf-flow-zone"
               style={{
-                background: (ZONE_COLORS[zone] || ZONE_COLORS['C']) + '22',
-                border: `1px solid ${ZONE_COLORS[zone] || ZONE_COLORS['C']}66`,
-                color: ZONE_COLORS[zone] || ZONE_COLORS['C'],
+                background: (ZONE_COLORS[item.key === 'C2' ? 'C' : item.key] || ZONE_COLORS['C']) + '22',
+                border: `1px solid ${(ZONE_COLORS[item.key === 'C2' ? 'C' : item.key] || ZONE_COLORS['C'])}66`,
+                color: ZONE_COLORS[item.key === 'C2' ? 'C' : item.key] || ZONE_COLORS['C'],
               }}
             >
-              {zone === 'А' ? 'Зона А' : zone === 'Б' ? 'Зона Б' : zone === 'С' && i === 2 ? 'Зона С' : zone === 'Д' ? 'Зона Д' : 'Зона С↩'}
+              {item.label}
             </div>
-            {i < 4 && <div className="wf-flow-arrow">→</div>}
+            {i < arr.length - 1 && <div className="wf-flow-arrow">→</div>}
           </div>
         ))}
       </div>
@@ -77,6 +85,15 @@ export default function WorkflowPanel() {
         <div className="wf-systems-title">🔧 Участвующие системы и оборудование</div>
         <div className="wf-systems-summary">
           Общее количество оборудования: <strong>{SYSTEM_EQUIPMENT.summary.totalEquipment} единиц</strong>
+        </div>
+        {/* Zone coverage pills */}
+        <div style={{ marginBottom: 8, display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+          {['Зона А', 'Зона Б', 'Зона С', 'Ожидание', 'Зона Е', 'Зона Д', 'Промзона верхняя'].map((z, i) => (
+            <div key={i} style={{
+              fontSize: '0.65rem', color: '#7a98bc', background: '#111828',
+              border: '1px solid #1c2b44', borderRadius: 4, padding: '3px 8px',
+            }}>• {z}</div>
+          ))}
         </div>
 
         {/* Cameras Section */}
@@ -190,10 +207,10 @@ export default function WorkflowPanel() {
                   <div className="wf-sys-item-purpose">💡 {led.purpose}</div>
                   <div className="wf-sys-item-type">👁️ Видимость: {led.visibility}</div>
                   <div className="wf-sys-item-integration">👤 Управление: {led.operator}</div>
-                  <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid #3d4463' }}>
-                    <strong style={{ color: '#9ba3c7' }}>Отображает:</strong>
+                  <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid #1c2b44' }}>
+                    <strong style={{ color: '#7a98bc' }}>Отображает:</strong>
                     {led.display.map((item, i) => (
-                      <div key={i} style={{ fontSize: '0.72rem', color: '#666d99', marginTop: 4 }}>• {item}</div>
+                      <div key={i} style={{ fontSize: '0.72rem', color: '#485f7a', marginTop: 4 }}>• {item}</div>
                     ))}
                   </div>
                 </div>
@@ -232,7 +249,7 @@ export default function WorkflowPanel() {
                   )}
                 </div>
               ))}
-              <div style={{ fontSize: '0.7rem', color: '#666d99', fontStyle: 'italic', marginTop: 12, padding: 12, background: '#1a1e2e', borderRadius: 6 }}>
+              <div style={{ fontSize: '0.7rem', color: '#485f7a', fontStyle: 'italic', marginTop: 12, padding: 12, background: '#1a1e2e', borderRadius: 6 }}>
                 ℹ️ {SYSTEM_EQUIPMENT.barriers.note}
               </div>
             </div>
@@ -270,15 +287,15 @@ export default function WorkflowPanel() {
                           <div className="wf-sys-item-purpose">💡 {cont.purpose}</div>
                           {cont.personnel > 0 && <div className="wf-sys-item-type">👥 Персонал: {cont.personnel} чел.</div>}
                           {cont.floor1 && (
-                            <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid #3d4463' }}>
-                              <div style={{ color: '#9ba3c7', fontSize: '0.72rem', marginBottom: 4 }}>
+                            <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid #1c2b44' }}>
+                              <div style={{ color: '#7a98bc', fontSize: '0.72rem', marginBottom: 4 }}>
                                 <strong>1-й этаж:</strong> {cont.floor1.rooms.join(' | ')}
                               </div>
                             </div>
                           )}
                           {cont.floor2 && (
                             <div style={{ marginTop: 4 }}>
-                              <div style={{ color: '#9ba3c7', fontSize: '0.72rem' }}>
+                              <div style={{ color: '#7a98bc', fontSize: '0.72rem' }}>
                                 <strong>2-й этаж:</strong> {cont.floor2.rooms.join(' | ')}
                               </div>
                             </div>

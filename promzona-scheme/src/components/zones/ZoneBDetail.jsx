@@ -1,12 +1,12 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { LANES, CAMERAS } from '../../data/zones'
 import '../ZoneDetail.css'
 
 const VIEWS = ['Схема сверху', 'Полосы детально', 'Логика распределения', 'Камеры и шлагбаумы']
 
 const LANE_COLORS = {
-  1: '#3B82F6', 2: '#3B82F6', 3: '#3B82F6',
-  4: '#EF4444', 5: '#10B981',
+  1: '#4b9eff', 2: '#4b9eff', 3: '#4b9eff',
+  4: '#4b9eff', 5: '#4b9eff',
 }
 
 export default function ZoneBDetail() {
@@ -20,7 +20,7 @@ export default function ZoneBDetail() {
         {VIEWS.map((v, i) => (
           <button key={i}
             className={`view-tab ${view === i ? 'active' : ''}`}
-            style={{ '--tab-color': '#8B5CF6' }}
+            style={{ '--tab-color': '#60a5fa' }}
             onClick={() => setView(i)}
           >{v}</button>
         ))}
@@ -29,12 +29,12 @@ export default function ZoneBDetail() {
       {/* TOP VIEW */}
       {view === 0 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#8B5CF6' }}>
+          <div className="detail-section-title" style={{ color: '#60a5fa' }}>
             🔭 Схема сверху — Зона Б (5 полос)
           </div>
           <div className="detail-section-body">
             <div className="schema-view">
-              <div style={{ fontSize: '0.68rem', color: '#666d99', marginBottom: 8 }}>← Въезд из Зоны А</div>
+              <div style={{ fontSize: '0.68rem', color: '#485f7a', marginBottom: 8 }}>← Въезд из Зоны А</div>
               {LANES.map(lane => (
                 <div key={lane.id} style={{
                   display: 'flex', alignItems: 'center', gap: 6,
@@ -46,11 +46,11 @@ export default function ZoneBDetail() {
                   onClick={() => setSelectedLane(lane.id)}
                 >
                   <span style={{ fontSize: '0.65rem', color: LANE_COLORS[lane.id], fontWeight: 700, minWidth: 18 }}>{lane.id}</span>
-                  <span style={{ flex: 1, fontSize: '0.68rem', color: '#9ba3c7' }}>{lane.purpose}</span>
-                  <span style={{ fontSize: '0.62rem', color: '#666d99' }}>🚧→ 🚛🚛🚛 →🚧</span>
+                  <span style={{ flex: 1, fontSize: '0.68rem', color: '#7a98bc' }}>{lane.purpose}</span>
+                  <span style={{ fontSize: '0.62rem', color: '#485f7a' }}>🚧→ 🚛🚛🚛 →🚧</span>
                 </div>
               ))}
-              <div style={{ fontSize: '0.68rem', color: '#666d99', marginTop: 8 }}>→ Выход на Зону С (по вызову)</div>
+              <div style={{ fontSize: '0.68rem', color: '#485f7a', marginTop: 8 }}>→ Выход на Зону С (по вызову)</div>
             </div>
 
             <div className="info-card">
@@ -78,10 +78,10 @@ export default function ZoneBDetail() {
                   <div className="schema-arrow">→</div>
                   {[...Array(6)].map((_, i) => (
                     <div key={i} style={{
-                      width: 20, height: 28, background: '#232838',
+                      width: 20, height: 28, background: '#111828',
                       border: `1px solid ${LANE_COLORS[selectedLane]}44`,
                       borderRadius: 2, fontSize: '0.55rem', display: 'flex',
-                      alignItems: 'center', justifyContent: 'center', color: '#666d99',
+                      alignItems: 'center', justifyContent: 'center', color: '#485f7a',
                     }}>🚛</div>
                   ))}
                   <div className="schema-arrow">→</div>
@@ -89,7 +89,7 @@ export default function ZoneBDetail() {
                 </div>
                 <button
                   onClick={() => setSelectedLane(null)}
-                  style={{ background: 'none', border: 'none', color: '#666d99', fontSize: '0.7rem', cursor: 'pointer', marginTop: 8 }}
+                  style={{ background: 'none', border: 'none', color: '#485f7a', fontSize: '0.7rem', cursor: 'pointer', marginTop: 8 }}
                 >✕ Закрыть</button>
               </div>
             )}
@@ -100,7 +100,7 @@ export default function ZoneBDetail() {
       {/* LANES DETAIL */}
       {view === 1 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#8B5CF6' }}>
+          <div className="detail-section-title" style={{ color: '#60a5fa' }}>
             🅿️ Полосы и назначение
           </div>
           <div className="detail-section-body">
@@ -117,11 +117,11 @@ export default function ZoneBDetail() {
                     Полоса {lane.id} — Очередь {lane.id}А
                   </span>
                 </div>
-                <div style={{ fontSize: '0.72rem', color: '#9ba3c7', marginBottom: 6 }}>
-                  <strong style={{ color: '#e8eaf6' }}>Назначение:</strong> {lane.purpose}
+                <div style={{ fontSize: '0.72rem', color: '#7a98bc', marginBottom: 6 }}>
+                  <strong style={{ color: '#f0f4ff' }}>Назначение:</strong> {lane.purpose}
                 </div>
-                <div style={{ fontSize: '0.7rem', color: '#9ba3c7' }}>
-                  <strong style={{ color: '#e8eaf6' }}>Формат талона:</strong>{' '}
+                <div style={{ fontSize: '0.7rem', color: '#7a98bc' }}>
+                  <strong style={{ color: '#f0f4ff' }}>Формат талона:</strong>{' '}
                   <span style={{ fontFamily: 'monospace', color: LANE_COLORS[lane.id] }}>
                     Б-{lane.id}-001, Б-{lane.id}-002 ...
                   </span>
@@ -140,7 +140,7 @@ export default function ZoneBDetail() {
       {/* LOGIC */}
       {view === 2 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#8B5CF6' }}>
+          <div className="detail-section-title" style={{ color: '#60a5fa' }}>
             ⚙️ Логика распределения по полосам
           </div>
           <div className="detail-section-body">
@@ -149,12 +149,12 @@ export default function ZoneBDetail() {
               <div className="schema-arrow">↓</div>
               <div className="schema-row">
                 <div className="schema-block cam" style={{ fontSize: '0.65rem' }}>ТОП-база?</div>
-                <div className="schema-block" style={{ background: '#EF444422', borderColor: '#EF4444', color: '#fca5a5', fontSize: '0.65rem' }}>ТЭЦ?</div>
-                <div className="schema-block" style={{ background: '#10B98122', borderColor: '#10B981', color: '#6ee7b7', fontSize: '0.65rem' }}>Соц/МСУ/Служ.?</div>
+                <div className="schema-block" style={{ background: '#4b9eff22', borderColor: '#4b9eff', color: '#93c5fd', fontSize: '0.65rem' }}>ТЭЦ?</div>
+                <div className="schema-block" style={{ background: '#4b9eff22', borderColor: '#4b9eff', color: '#93c5fd', fontSize: '0.65rem' }}>Соц/МСУ/Служ.?</div>
               </div>
               <div className="schema-arrow">↓</div>
               <div className="schema-row">
-                <div style={{ fontSize: '0.62rem', color: '#9ba3c7', textAlign: 'center', maxWidth: 220, lineHeight: 1.5 }}>
+                <div style={{ fontSize: '0.62rem', color: '#7a98bc', textAlign: 'center', maxWidth: 220, lineHeight: 1.5 }}>
                   Полосы 1→2→3 (ТОП) / Полоса 4 (ТЭЦ) / Полоса 5 (Соц/МСУ/Служ.)
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function ZoneBDetail() {
       {/* CAMERAS */}
       {view === 3 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#8B5CF6' }}>
+          <div className="detail-section-title" style={{ color: '#60a5fa' }}>
             📷 Камеры и шлагбаумы Зоны Б
           </div>
           <div className="detail-section-body">

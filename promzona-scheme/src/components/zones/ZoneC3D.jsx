@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import Tooltip from '../Tooltip'
 import './Zone3D.css'
 import './ZoneC3D.css'
@@ -18,7 +18,7 @@ export default function ZoneC3D() {
           <button
             key={v.id}
             className={`zm-view-tab ${view === v.id ? 'active' : ''}`}
-            style={{ '--tab-color': '#10B981', '--tab-bg': '#0d2520' }}
+            style={{ '--tab-color': '#4b9eff', '--tab-bg': '#0a1020' }}
             onClick={() => setView(v.id)}
           >{v.label}</button>
         ))}
@@ -66,8 +66,8 @@ export default function ZoneC3D() {
           {/* Exit barrier */}
           <Tooltip title="🚧 Шлагбаум С-ШЛ-1" text="Двойная верификация ANPR+QR. Ручная кнопка у охранника. После выезда — на Трассу 6 (встречка, вне Зон А и Б)." side="top">
             <div className="za-barrier-h zc-barrier-exit">
-              <div className="za-barrier-arm-h" style={{ background: 'repeating-linear-gradient(90deg, #10B981 0px, #10B981 12px, #fff 12px, #fff 20px)' }} />
-              <div className="za-barrier-label-h" style={{ color: '#10B981' }}>🚧 ВЫЕЗД С-ШЛ-1</div>
+              <div className="za-barrier-arm-h" style={{ background: 'repeating-linear-gradient(90deg, #4b9eff 0px, #4b9eff 12px, #fff 12px, #fff 20px)' }} />
+              <div className="za-barrier-label-h" style={{ color: '#4b9eff' }}>🚧 ВЫЕЗД С-ШЛ-1</div>
             </div>
           </Tooltip>
 
@@ -75,7 +75,7 @@ export default function ZoneC3D() {
           <div className="zc-top-exit">
             <div className="zc-top-road-h zc-lane7">
               <div className="zc-road-dashes-h">
-                {[...Array(14)].map((_, i) => <div key={i} className="za-dash-h" style={{ background: '#10B98166' }} />)}
+                {[...Array(14)].map((_, i) => <div key={i} className="za-dash-h" style={{ background: '#4b9eff66' }} />)}
               </div>
               <div className="zc-top-exit-label">↓ Трасса 6 (встречка) → вне Зон А и Б · или → в Зону Д</div>
             </div>
@@ -152,12 +152,12 @@ export default function ZoneC3D() {
           {/* Right — exit road with barrier */}
           <div className="zc-fv-exit">
             <div className="zc-fv-barrier">
-              <div className="za-fb-pole" style={{ height: 80, background: 'linear-gradient(180deg, #10B981, #064e3b)' }} />
-              <div className="za-fb-arm" style={{ background: 'repeating-linear-gradient(90deg, #10B981 0px, #10B981 8px, #fff 8px, #fff 14px)' }} />
-              <div className="za-fb-label" style={{ color: '#10B981' }}>🚧 ВЫЕЗД</div>
+              <div className="za-fb-pole" style={{ height: 80, background: 'linear-gradient(180deg, #4b9eff, #064e3b)' }} />
+              <div className="za-fb-arm" style={{ background: 'repeating-linear-gradient(90deg, #4b9eff 0px, #4b9eff 8px, #fff 8px, #fff 14px)' }} />
+              <div className="za-fb-label" style={{ color: '#4b9eff' }}>🚧 ВЫЕЗД</div>
             </div>
             <div className="zc-fv-road-v">
-              <div className="zc-fv-road-label" style={{ color: '#10B981' }}>→ Трасса 6</div>
+              <div className="zc-fv-road-label" style={{ color: '#4b9eff' }}>→ Трасса 6</div>
             </div>
           </div>
         </div>
@@ -167,28 +167,28 @@ export default function ZoneC3D() {
       <div className="zone3d-info">
         <div className="z3d-info-grid">
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#10B981' }}>📺</div>
+            <div className="z3d-ic-icon" style={{ color: '#4b9eff' }}>📺</div>
             <div>
               <div className="z3d-ic-title">LED-экран</div>
               <div className="z3d-ic-text">На фасаде верхнего контейнера. Номер ТС + талон + «ПОДЪЕХАТЬ»</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#10B981' }}>🖥️</div>
+            <div className="z3d-ic-icon" style={{ color: '#4b9eff' }}>🖥️</div>
             <div>
               <div className="z3d-ic-title">Оператор СБ</div>
               <div className="z3d-ic-text">Вызывает по FIFO. Машины из Зоны Б проезжают сверху</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#F59E0B' }}>🛡️</div>
+            <div className="z3d-ic-icon" style={{ color: '#93c5fd' }}>🛡️</div>
             <div>
               <div className="z3d-ic-title">Охранник СБ-2</div>
               <div className="z3d-ic-text">Финальная проверка. ANPR + QR. Кнопка шлагбаума</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#8B5CF6' }}>🛣️</div>
+            <div className="z3d-ic-icon" style={{ color: '#60a5fa' }}>🛣️</div>
             <div>
               <div className="z3d-ic-title">Трасса 6 (встречка)</div>
               <div className="z3d-ic-text">Выезд из Зоны С. Вне Зон А и Б. Или в Зону Д</div>

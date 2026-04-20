@@ -1,4 +1,4 @@
-/* ===== Overview Map — Real top-down view ===== */
+﻿/* ===== Overview Map ===== */
 
 .overview-map {
   padding: 30px 32px 60px;
@@ -11,12 +11,13 @@
 /* Title */
 .map-title { text-align: center; }
 .map-title h1 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #e8eaf6;
-  letter-spacing: -0.02em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0f4ff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
-.map-title p { font-size: 0.78rem; color: #666d99; margin-top: 4px; }
+.map-title p { font-size: 0.76rem; color: #485f7a; margin-top: 5px; letter-spacing: 0.02em; }
 
 /* Legend */
 .map-legend {
@@ -25,72 +26,55 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-.legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #9ba3c7; }
-.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: #7a98bc; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
-/* ===== Lane 7 (bottom of map, under A & B, from Zone C) ===== */
-.lane7-wrapper {
+/* ===== Lane 7 ===== */
+/* ===== A+B+C column wrapper with lane 6 below ===== */
+.ov-abc-col {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+  align-items: stretch;
+}
+.ov-abc-zones {
+  display: flex;
+  align-items: stretch;
   gap: 0;
+}
+
+/* Lane 6 — sits exactly under A+B+C */
+.lane6-strip {
+  background: #0d1220;
+  border: 1px dashed #243652;
+  border-radius: 4px;
+  padding: 8px 14px;
   width: 100%;
+  box-sizing: border-box;
 }
-.lane7-spacer-left {
-  display: flex;
-  gap: 0;
-  flex-shrink: 0;
-}
-.lane7-entry-ghost {
-  width: 80px; /* ширина въезда */
-  flex-shrink: 0;
-}
-.lane7-road-ghost {
-  width: 38px; /* ширина дороги */
-  flex-shrink: 0;
-}
-.lane7-spacer-right {
-  display: flex;
-  gap: 0;
-  flex-shrink: 0;
-}
-.lane7-zone-d-ghost {
-  min-width: 180px; /* примерная ширина зоны D */
-  flex-shrink: 0;
-}
-.lane7-bottom {
-  background: #1c0f0f;
-  border: 2px dashed #EF444466;
-  border-radius: 6px;
-  padding: 10px 16px;
-  position: relative;
-  flex: 1;
-  min-width: 0;
-}
-.lane7-from-c {
-  position: absolute;
-  right: 0;
-  top: -20px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #EF4444;
-  white-space: nowrap;
-  animation: lane7arrow 1.5s infinite;
-}
-@keyframes lane7arrow {
-  0%, 100% { opacity: 0.5; transform: translateY(2px); }
-  50% { opacity: 1; transform: translateY(-2px); }
-}
-.lane7-track {
+.lane6-track {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.lane7-exit-dir {
-  font-size: 0.6rem;
+
+.lane7-from-c {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  font-size: 0.62rem;
   font-weight: 700;
-  color: #EF4444;
+  color: #4b9eff;
   white-space: nowrap;
+  animation: lane7arrow 1.5s infinite;
+  letter-spacing: 0.04em;
 }
+@keyframes lane7arrow {
+  0%, 100% { opacity: 0.4; transform: translateY(2px); }
+  50% { opacity: 1; transform: translateY(-2px); }
+}
+.lane7-track { display: flex; align-items: center; gap: 8px; }
+.lane7-exit-dir { font-size: 0.6rem; font-weight: 700; color: #4b9eff; white-space: nowrap; }
 .lane7-truck-anim {
   font-size: 1rem;
   animation: lane7truck 2.5s infinite ease-in-out;
@@ -107,26 +91,21 @@
   flex-wrap: nowrap;
   overflow: hidden;
 }
-.lane7-dash {
-  width: 18px;
-  height: 3px;
-  background: #EF444466;
-  border-radius: 1px;
-  flex-shrink: 0;
-}
+.lane7-dash { width: 18px; height: 3px; background: #1c2b44; border-radius: 1px; flex-shrink: 0; }
 .lane7-label {
   text-align: center;
-  font-size: 0.68rem;
-  color: #EF4444;
+  font-size: 0.66rem;
+  color: #4b9eff;
   font-weight: 700;
   margin-top: 4px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* ===== Zones row ===== */
 .ov-zones-row {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
   gap: 0;
   flex-wrap: nowrap;
@@ -147,12 +126,12 @@
 .ov-truck-icon:nth-child(2) { animation-delay: 0.4s; }
 .ov-truck-icon:nth-child(3) { animation-delay: 0.8s; }
 @keyframes truckMove {
-  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
   50% { transform: translateY(-3px); opacity: 1; }
 }
-.ov-entry-label { font-size: 0.62rem; color: #666d99; text-align: center; line-height: 1.3; }
+.ov-entry-label { font-size: 0.6rem; color: #485f7a; text-align: center; line-height: 1.3; letter-spacing: 0.02em; }
 
-/* Road segment (connector between zones) */
+/* Road connector */
 .ov-road {
   display: flex;
   flex-direction: column;
@@ -161,39 +140,30 @@
   padding: 0 3px;
   min-width: 32px;
 }
-.ov-road-dashes {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.ov-rd {
-  width: 22px;
-  height: 3px;
-  background: #F59E0B55;
-  border-radius: 1px;
-}
-.ov-road-lbl { font-size: 0.85rem; color: #F59E0B; margin-top: 2px; }
+.ov-road-dashes { display: flex; flex-direction: column; gap: 5px; }
+.ov-rd { width: 22px; height: 3px; background: #1c2b44; border-radius: 1px; }
+.ov-road-lbl { font-size: 0.82rem; color: #7a98bc; margin-top: 2px; }
 
 /* ===== Zone Block ===== */
 .ov-zone {
-  background: #1e2235;
-  border: 2px solid #3d4463;
-  border-radius: 12px;
+  background: #0e1422;
+  border: 1px solid #1c2b44;
+  border-radius: 8px;
   padding: 14px;
   cursor: pointer;
-  transition: all 0.22s;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
   position: relative;
   flex-shrink: 0;
 }
 .ov-zone:hover {
   border-color: var(--zc);
-  box-shadow: 0 0 24px var(--zg), 0 4px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 0 0 1px var(--zc), 0 4px 24px rgba(0,0,0,0.6);
   transform: translateY(-3px);
 }
 .ov-zone--active {
   border-color: var(--zc) !important;
-  box-shadow: 0 0 36px var(--zg), 0 8px 32px rgba(0,0,0,0.6) !important;
-  background: #1a2035 !important;
+  box-shadow: 0 0 0 1px var(--zc), 0 8px 32px rgba(0,0,0,0.7) !important;
+  background: #0d1830 !important;
 }
 .ov-zone-header {
   display: flex;
@@ -201,7 +171,179 @@
   gap: 8px;
   margin-bottom: 10px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #2e3450;
+  border-bottom: 1px solid #1c2b44;
+}
+.ov-zone-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--zc);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.ov-zone-sub { font-size: 0.6rem; color: #485f7a; letter-spacing: 0.02em; }
+.ov-zone-body { min-height: 100px; }
+.ov-zone-hint {
+  font-size: 0.58rem;
+  color: var(--zc);
+  text-align: center;
+  margin-top: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.ov-zone-hint.vis { opacity: 1; }
+
+/* Zone B wider */
+.ov-zone--b { min-width: 420px; }
+
+/* ===== Mini Zone A ===== */
+.m-a { display: flex; flex-direction: column; gap: 5px; align-items: center; }
+.m-a-barrier {
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  background: #0d1220;
+  border: 1px solid #243652;
+  color: #4b9eff;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.m-a-cams {
+  font-size: 0.56rem;
+  color: #7a98bc;
+  padding: 2px 6px;
+  background: #0e1422;
+  border-radius: 3px;
+  border: 1px solid #1c2b44;
+}
+.m-a-main { display: flex; align-items: center; gap: 4px; }
+.m-a-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.54rem;
+  color: #7a98bc;
+}
+.m-a-cont > div {
+  padding: 3px 5px;
+  background: #111828;
+  border: 1px solid #1c2b44;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.m-a-left > div  { border-left: 2px solid #4b9eff; }
+.m-a-right > div { border-left: 2px solid #93c5fd; }
+.m-a-scale {
+  padding: 6px 8px;
+  background: #0a1020;
+  border: 1px dashed #243652;
+  border-radius: 3px;
+  font-size: 0.56rem;
+  color: #4b9eff;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ===== Mini Zone B ===== */
+.m-b { display: flex; flex-direction: column; gap: 4px; }
+.m-b-lane {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #0e1422;
+  border: 1px solid var(--lc, #1c2b44);
+  border-left: 3px solid var(--lc, #1c2b44);
+  border-radius: 3px;
+  padding: 5px 8px;
+}
+.m-b-barrier { font-size: 0.75rem; }
+.m-b-label { font-size: 0.6rem; color: #7a98bc; font-weight: 600; white-space: nowrap; min-width: 70px; letter-spacing: 0.02em; }
+.m-b-dots { display: flex; gap: 4px; flex: 1; align-items: center; justify-content: center; }
+.m-b-dot { width: 6px; height: 2px; background: var(--lc, #1c2b44); opacity: 0.5; border-radius: 1px; }
+.m-b-truck { font-size: 0.8rem; }
+
+/* ===== Mini Zone C ===== */
+.m-c { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.m-c-cont {
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.56rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.m-c-cont.upper {
+  background: #0a1428;
+  border: 1px solid #243652;
+  color: #60a5fa;
+}
+.m-c-cont.lower {
+  background: #0d1220;
+  border: 1px solid #1c2b44;
+  color: #93c5fd;
+}
+.m-c-road-between {
+  font-size: 0.5rem;
+  color: #485f7a;
+  padding: 1px 8px;
+  background: #111828;
+  border-radius: 2px;
+}
+.m-c-barrier {
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.56rem;
+  font-weight: 700;
+  background: #0d1220;
+  border: 1px solid #243652;
+  color: #4b9eff;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ===== Mini Zone D ===== */
+.m-d { display: flex; flex-direction: column; gap: 3px; }
+.m-d-item {
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 0.56rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.m-d-scale {
+  background: #0a1020;
+  border: 1px dashed #1c2b44;
+  color: #4b9eff;
+}
+.m-d-cont {
+  background: #0d1220;
+  border: 1px solid #1c2b44;
+  border-left: 3px solid #2563eb;
+  color: #93c5fd;
+}
+
+/* System badges */
+.system-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding-top: 8px;
+}
+.sys-badge {
+  padding: 4px 12px;
+  background: #0d1220;
+  border: 1px solid #1c2b44;
+  border-radius: 20px;
+  font-size: 0.66rem;
+  color: #7a98bc;
+  letter-spacing: 0.03em;
 }
 .ov-zone-label {
   font-size: 0.88rem;
@@ -209,7 +351,7 @@
   color: var(--zc);
   letter-spacing: 0.06em;
 }
-.ov-zone-sub { font-size: 0.62rem; color: #666d99; }
+.ov-zone-sub { font-size: 0.62rem; color: #485f7a; }
 .ov-zone-body { min-height: 100px; }
 .ov-zone-hint {
   font-size: 0.6rem;
@@ -233,9 +375,9 @@
   border-radius: 4px;
   font-size: 0.6rem;
   font-weight: 700;
-  background: #2a2f45;
-  border: 1px solid #EF4444;
-  color: #EF4444;
+  background: #0d1220;
+  border: 1px solid #4b9eff;
+  color: #4b9eff;
   white-space: nowrap;
 }
 .m-a-cams {
@@ -256,24 +398,24 @@
   flex-direction: column;
   gap: 2px;
   font-size: 0.55rem;
-  color: #9ba3c7;
+  color: #7a98bc;
 }
 .m-a-cont > div {
   padding: 3px 5px;
   background: #232c42;
-  border: 1px solid #3d4463;
+  border: 1px solid #1c2b44;
   border-radius: 3px;
   white-space: nowrap;
 }
-.m-a-left > div { border-left: 2px solid #3B82F6; }
-.m-a-right > div { border-left: 2px solid #F59E0B; }
+.m-a-left > div { border-left: 2px solid #4b9eff; }
+.m-a-right > div { border-left: 2px solid #93c5fd; }
 .m-a-scale {
   padding: 6px 8px;
   background: #1a2535;
-  border: 2px dashed #10B981;
+  border: 2px dashed #4b9eff;
   border-radius: 4px;
   font-size: 0.58rem;
-  color: #10B981;
+  color: #4b9eff;
   font-weight: 700;
   text-align: center;
 }
@@ -284,19 +426,19 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #1e2235;
-  border: 1px solid var(--lc, #3d4463);
-  border-left: 3px solid var(--lc, #3d4463);
+  background: #0e1422;
+  border: 1px solid var(--lc, #1c2b44);
+  border-left: 3px solid var(--lc, #1c2b44);
   border-radius: 4px;
   padding: 5px 8px;
 }
 .m-b-barrier { font-size: 0.75rem; }
-.m-b-label { font-size: 0.62rem; color: #9ba3c7; font-weight: 600; white-space: nowrap; min-width: 70px; }
+.m-b-label { font-size: 0.62rem; color: #7a98bc; font-weight: 600; white-space: nowrap; min-width: 70px; }
 .m-b-dots { display: flex; gap: 4px; flex: 1; align-items: center; justify-content: center; }
 .m-b-dot {
   width: 6px;
   height: 2px;
-  background: var(--lc, #3d4463);
+  background: var(--lc, #1c2b44);
   opacity: 0.4;
   border-radius: 1px;
 }
@@ -313,20 +455,20 @@
 }
 .m-c-cont.upper {
   background: #0a1a12;
-  border: 1px solid #10B981;
-  color: #10B981;
-  box-shadow: 0 0 6px rgba(16,185,129,0.3);
+  border: 1px solid #4b9eff;
+  color: #4b9eff;
+  box-shadow: 0 0 6px rgba(37,99,235,0.15);
 }
 .m-c-cont.lower {
-  background: #1f1a10;
-  border: 1px solid #F59E0B55;
-  color: #F59E0B;
+  background: #0d1220;
+  border: 1px solid #93c5fd55;
+  color: #93c5fd;
 }
 .m-c-road-between {
   font-size: 0.5rem;
-  color: #666d99;
+  color: #485f7a;
   padding: 1px 8px;
-  background: #2d3340;
+  background: #0f1826;
   border-radius: 2px;
 }
 .m-c-barrier {
@@ -334,9 +476,9 @@
   border-radius: 4px;
   font-size: 0.58rem;
   font-weight: 700;
-  background: #2a2f45;
-  border: 1px solid #EF4444;
-  color: #EF4444;
+  background: #0d1220;
+  border: 1px solid #4b9eff;
+  color: #4b9eff;
   white-space: nowrap;
 }
 
@@ -350,15 +492,15 @@
   white-space: nowrap;
 }
 .m-d-scale {
-  background: #0d2520;
-  border: 1px dashed #10B981;
-  color: #10B981;
+  background: #0a1020;
+  border: 1px dashed #4b9eff;
+  color: #4b9eff;
 }
 .m-d-cont {
-  background: #1f1a10;
-  border: 1px solid #F59E0B44;
-  border-left: 3px solid #F59E0B;
-  color: #F59E0B;
+  background: #0d1220;
+  border: 1px solid #93c5fd44;
+  border-left: 3px solid #93c5fd;
+  color: #93c5fd;
 }
 
 /* System badges */
@@ -371,9 +513,129 @@
 }
 .sys-badge {
   padding: 5px 12px;
-  background: #2a2f45;
-  border: 1px solid #3d4463;
+  background: #0d1220;
+  border: 1px solid #1c2b44;
   border-radius: 20px;
   font-size: 0.68rem;
-  color: #9ba3c7;
+  color: #7a98bc;
 }
+
+/* ===== Mini Zone Wait (holding area Кой-Коро) ===== */
+.m-wait { display: flex; flex-direction: column; gap: 4px; align-items: stretch; }
+.m-wait-barrier {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  background: #0d1220;
+  border: 1px solid #60a5fa;
+  color: #60a5fa;
+  text-align: center;
+}
+.m-wait-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 6px;
+  background: #090c16;
+  border: 1px solid #1c2b44;
+  border-radius: 6px;
+}
+.m-wait-anpr, .m-wait-skud {
+  font-size: 0.58rem;
+  color: #485f7a;
+  text-align: center;
+  padding: 2px 0;
+}
+.m-wait-skud { color: #60a5fa; }
+.m-wait-slots { display: flex; flex-direction: column; gap: 2px; }
+.m-wait-slot {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  background: #111828;
+  border: 1px solid #1c2b4444;
+  border-radius: 3px;
+}
+.m-wait-truck { font-size: 0.7rem; }
+.m-wait-label { font-size: 0.52rem; color: #485f7a; }
+
+/* ===== Mini Zone E (Quarry / Loading) ===== */
+.m-e { display: flex; flex-direction: column; gap: 4px; }
+.m-e-skud {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  background: #0d1220;
+  border: 1px solid #4b9eff;
+  color: #4b9eff;
+  text-align: center;
+}
+.m-e-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 6px;
+  background: #090c16;
+  border: 1px solid #1c2b44;
+  border-radius: 6px;
+}
+.m-e-excavator {
+  padding: 3px 8px;
+  background: #111828;
+  border: 1px solid #4b9eff33;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  color: #7a98bc;
+}
+.m-e-trucks { display: flex; gap: 6px; justify-content: center; }
+.m-e-truck { font-size: 0.9rem; }
+.m-e-label {
+  font-size: 0.58rem;
+  color: #4b9eff;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ===== Mini Zone Top (upper industrial) ===== */
+.m-top { display: flex; flex-direction: column; gap: 4px; }
+.m-top-row { display: flex; gap: 6px; }
+.m-top-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 4px;
+  background: #0e1422;
+  border: 1px solid #1c2b44;
+  border-radius: 6px;
+}
+.m-top-block.canteen { border-color: #7ab8ff44; border-top: 2px solid #7ab8ff; }
+.m-top-icon { font-size: 1.2rem; }
+.m-top-name { font-size: 0.62rem; font-weight: 700; color: #f0f4ff; }
+.m-top-detail { font-size: 0.54rem; color: #485f7a; text-align: center; }
+
+/* ===== Промзона верхняя wrapper ===== */
+.ov-top-zone-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 10px 0 4px;
+  border-top: 1px dashed #1c2b44;
+}
+.ov-top-zone-label {
+  font-size: 0.62rem;
+  color: #485f7a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-left: 4px;
+}
+.ov-top-zone-wrapper .ov-zone--top {
+  max-width: 420px;
+  align-self: flex-start;
+}
+

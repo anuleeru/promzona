@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { CAMERAS } from '../../data/zones'
 import '../ZoneDetail.css'
 
@@ -16,7 +16,7 @@ export default function ZoneADetail() {
           <button
             key={i}
             className={`view-tab ${view === i ? 'active' : ''}`}
-            style={{ '--tab-color': '#3B82F6' }}
+            style={{ '--tab-color': '#4b9eff' }}
             onClick={() => setView(i)}
           >{v}</button>
         ))}
@@ -25,7 +25,7 @@ export default function ZoneADetail() {
       {/* TOP VIEW */}
       {view === 0 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#3B82F6' }}>
+          <div className="detail-section-title" style={{ color: '#4b9eff' }}>
             🔭 Схема сверху — Зона А
           </div>
           <div className="detail-section-body">
@@ -71,7 +71,7 @@ export default function ZoneADetail() {
       {/* FRONT VIEW */}
       {view === 1 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#3B82F6' }}>
+          <div className="detail-section-title" style={{ color: '#4b9eff' }}>
             🏗️ Вид спереди — въездная сторона
           </div>
           <div className="detail-section-body">
@@ -81,27 +81,27 @@ export default function ZoneADetail() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'center' }}>
                   <div className="schema-block cam" style={{ width: 110 }}>2 эт. — Серверная / Офис пропусков</div>
                   <div className="schema-block cam" style={{ width: 110 }}>1 эт. — Камеры ANPR + Фото</div>
-                  <div style={{ fontSize: '0.6rem', color: '#666d99' }}>ЛЕВЫЙ БЛОК</div>
+                  <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>ЛЕВЫЙ БЛОК</div>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-                  <div style={{ fontSize: '0.65rem', color: '#10B981', marginBottom: 4 }}>Площадка</div>
+                  <div style={{ fontSize: '0.65rem', color: '#4b9eff', marginBottom: 4 }}>Площадка</div>
                   <div className="schema-block scale" style={{ width: 80 }}>⚖️ ВЕСЫ</div>
-                  <div style={{ fontSize: '0.6rem', color: '#666d99', textAlign: 'center', width: 80 }}>🚛🚛 тонар</div>
+                  <div style={{ fontSize: '0.6rem', color: '#485f7a', textAlign: 'center', width: 80 }}>🚛🚛 тонар</div>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'center' }}>
                   <div className="schema-block office" style={{ width: 110 }}>2 эт. — Склад / Серверная</div>
                   <div className="schema-block office" style={{ width: 110 }}>1 эт. — 1С-специалист</div>
-                  <div style={{ fontSize: '0.6rem', color: '#666d99' }}>ПРАВЫЙ БЛОК</div>
+                  <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>ПРАВЫЙ БЛОК</div>
                 </div>
               </div>
 
-              <div style={{ width: '100%', height: 1, background: '#2e3450', margin: '8px 0' }} />
+              <div style={{ width: '100%', height: 1, background: '#1c2b44', margin: '8px 0' }} />
 
               <div className="schema-row">
                 <div className="schema-block barrier">🚧 Въездной шлагбаум</div>
-                <div style={{ fontSize: '0.6rem', color: '#666d99' }}>← 1 полоса ←</div>
+                <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>← 1 полоса ←</div>
               </div>
             </div>
 
@@ -121,10 +121,10 @@ export default function ZoneADetail() {
               <div className="floor-label">Правый контейнер — 2 уровня</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <div className="floor-rooms">
-                  <div className="floor-room" style={{ borderColor: '#F59E0B', color: '#fcd34d', background: '#251d0e' }}>2 эт.<br/>Склад (осн. часть)<br/>Серверная (мал. часть)</div>
+                  <div className="floor-room" style={{ borderColor: '#93c5fd', color: '#93c5fd', background: '#251d0e' }}>2 эт.<br/>Склад (осн. часть)<br/>Серверная (мал. часть)</div>
                 </div>
                 <div className="floor-rooms">
-                  <div className="floor-room" style={{ borderColor: '#F59E0B', color: '#fcd34d', background: '#251d0e' }}>1 эт.<br/>1С-специалист · Весовщик<br/>Выдача талонов и накладных</div>
+                  <div className="floor-room" style={{ borderColor: '#93c5fd', color: '#93c5fd', background: '#251d0e' }}>1 эт.<br/>1С-специалист · Весовщик<br/>Выдача талонов и накладных</div>
                 </div>
               </div>
             </div>
@@ -135,12 +135,12 @@ export default function ZoneADetail() {
       {/* SIDE VIEW */}
       {view === 2 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#3B82F6' }}>
+          <div className="detail-section-title" style={{ color: '#4b9eff' }}>
             📐 Вид сбоку — расположение оборудования
           </div>
           <div className="detail-section-body">
             <div className="schema-view">
-              <div style={{ fontSize: '0.7rem', color: '#666d99', marginBottom: 8 }}>Движение транспорта →</div>
+              <div style={{ fontSize: '0.7rem', color: '#485f7a', marginBottom: 8 }}>Движение транспорта →</div>
               <div className="schema-row">
                 <div className="schema-block barrier">🚧 Въезд</div>
                 <div className="schema-arrow">→</div>
@@ -170,7 +170,7 @@ export default function ZoneADetail() {
       {/* CAMERAS */}
       {view === 3 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#3B82F6' }}>
+          <div className="detail-section-title" style={{ color: '#4b9eff' }}>
             📷 Камеры и системы Зоны А
           </div>
           <div className="detail-section-body">

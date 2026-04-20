@@ -1,4 +1,4 @@
-/* ===== Zone C 3D specific styles ===== */
+﻿/* ===== Zone C 3D specific styles ===== */
 
 /* ====== TOP VIEW ====== */
 .zc-top-view {
@@ -17,7 +17,7 @@
 .zc-top-road-h {
   width: 100%;
   height: 48px;
-  background: #2d3340;
+  background: #0f1826;
   border: 1px solid #4B556333;
   border-radius: 3px;
   position: relative;
@@ -42,7 +42,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.68rem;
-  color: #8B5CF6;
+  color: #60a5fa;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -77,7 +77,7 @@
 }
 .zc-top-single {
   background: #0d1e18;
-  border: 2px solid #10B98144;
+  border: 2px solid #4b9eff44;
   position: relative;
 }
 
@@ -87,14 +87,14 @@
 .zc-top-fl-label {
   font-size: 0.55rem;
   font-weight: 800;
-  color: #10B981;
+  color: #4b9eff;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 .zc-top-fl-divider {
   height: 1px;
-  background: #10B98133;
+  background: #4b9eff33;
   margin: 4px 14px;
 }
 
@@ -107,15 +107,15 @@
   padding: 10px;
   border-radius: 6px;
   font-size: 0.72rem;
-  color: #9ba3c7;
+  color: #7a98bc;
   text-align: center;
   line-height: 1.5;
   background: #0a1a12;
-  border: 1px solid #10B98133;
+  border: 1px solid #4b9eff33;
 }
 .zc-small {
   font-size: 0.58rem;
-  color: #666d99;
+  color: #485f7a;
 }
 .zc-top-ct-label {
   font-size: 0.62rem;
@@ -123,7 +123,7 @@
   letter-spacing: 0.08em;
   text-align: center;
   margin-top: 8px;
-  color: #10B981;
+  color: #4b9eff;
 }
 
 /* LED strip on upper container */
@@ -131,24 +131,24 @@
   width: 100%;
   padding: 8px 16px;
   background: #000;
-  border: 2px solid #10B981;
+  border: 2px solid #4b9eff;
   border-radius: 6px;
   margin-bottom: 10px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(16,185,129,0.4), 0 0 40px rgba(16,185,129,0.15);
+  box-shadow: 0 0 20px rgba(37,99,235,0.15), 0 0 40px rgba(37,99,235,0.1);
 }
 .zc-led-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(16,185,129,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(37,99,235,0.05) 0%, transparent 70%);
 }
 .zc-led-text {
   position: relative;
   z-index: 1;
   font-size: 0.78rem;
   font-weight: 800;
-  color: #10B981;
+  color: #4b9eff;
   font-family: monospace;
   text-align: center;
   display: block;
@@ -158,8 +158,8 @@
 
 /* Lane 7 exit road */
 .zc-lane7 {
-  border-color: #10B98144;
-  background: #1a2d28;
+  border-color: #4b9eff44;
+  background: #0d1428;
 }
 .zc-top-exit-label {
   position: absolute;
@@ -167,7 +167,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.68rem;
-  color: #10B981;
+  color: #4b9eff;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -184,9 +184,9 @@
   padding: 30px 20px;
   min-height: 360px;
   width: 100%;
-  background: linear-gradient(180deg, #0f1320 0%, #141824 60%, #1a1f2e 100%);
+  background: linear-gradient(180deg, #0f1320 0%, #0a0d18 60%, #1a1f2e 100%);
   border-radius: 12px;
-  border: 1px solid #10B98122;
+  border: 1px solid #4b9eff22;
 }
 
 .zc-fv-entry, .zc-fv-exit {
@@ -206,7 +206,7 @@
 .zc-fv-road-label {
   font-size: 0.68rem;
   font-weight: 700;
-  color: #8B5CF6;
+  color: #60a5fa;
 }
 .zc-fv-truck {
   font-size: 1.5rem;
@@ -228,7 +228,7 @@
   gap: 0;
   border-radius: 10px;
   overflow: hidden;
-  border: 2px solid #10B98144;
+  border: 2px solid #4b9eff44;
 }
 
 /* Floor — equal height */
@@ -240,14 +240,14 @@
   min-height: 120px;
 }
 .zc-fv-floor-2 {
-  border-bottom: 2px solid #10B98133;
+  border-bottom: 2px solid #4b9eff33;
 }
 .zc-fv-floor-label {
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-size: 0.55rem;
   font-weight: 800;
-  color: #10B981;
+  color: #4b9eff;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 8px 6px;
@@ -271,7 +271,7 @@
 }
 .zc-fv-rest-section {
   flex: 3 !important;
-  border-right: 2px solid #10B98133;
+  border-right: 2px solid #4b9eff33;
   background: #0a1510;
 }
 
@@ -282,7 +282,7 @@
   background: #000;
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 0 30px rgba(16,185,129,0.15);
+  box-shadow: inset 0 0 30px rgba(37,99,235,0.1);
 }
 .zc-fv-led-row1 {
   display: flex;
@@ -292,20 +292,20 @@
   position: relative;
   z-index: 1;
   padding-bottom: 6px;
-  border-bottom: 1px solid #10B98133;
+  border-bottom: 1px solid #4b9eff33;
   margin-bottom: 6px;
   flex-wrap: wrap;
 }
 .zc-fv-led-title {
   font-size: 0.45rem;
-  color: #10B981;
+  color: #4b9eff;
   opacity: 0.6;
   letter-spacing: 0.15em;
 }
 .zc-fv-led-num {
   font-size: 0.78rem;
   font-weight: 900;
-  color: #10B981;
+  color: #4b9eff;
   font-family: monospace;
   text-shadow: 0 0 10px rgba(16,185,129,0.7);
 }
@@ -335,7 +335,7 @@
 .zc-fv-led-q-title {
   font-size: 0.48rem;
   font-weight: 700;
-  color: #10B981;
+  color: #4b9eff;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -348,11 +348,11 @@
 }
 .zc-fv-led-q-sub {
   font-size: 0.42rem;
-  color: #10B98188;
+  color: #4b9eff88;
 }
 .zc-fv-led-q-div {
   width: 1px;
-  background: #10B98133;
+  background: #4b9eff33;
 }
 
 .zc-fv-section {
@@ -364,7 +364,7 @@
   text-align: center;
   padding: 10px;
   font-size: 0.72rem;
-  color: #9ba3c7;
+  color: #7a98bc;
   line-height: 1.5;
 }
 .zc-fv-section-icon {
@@ -373,7 +373,7 @@
 }
 .zc-fv-divider {
   width: 1px;
-  background: #10B98133;
+  background: #4b9eff33;
   margin: 0 6px;
 }
 
@@ -382,7 +382,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #10B98144, transparent);
+  background: linear-gradient(90deg, transparent, #4b9eff44, transparent);
   animation: scanline 2.5s infinite linear;
 }
 @keyframes scanline {

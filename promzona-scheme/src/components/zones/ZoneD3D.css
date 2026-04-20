@@ -1,4 +1,4 @@
-/* ===== Zone D specific styles ===== */
+﻿/* ===== Zone D specific styles ===== */
 
 /* ====== TOP VIEW ====== */
 .zd-top-view {
@@ -17,7 +17,7 @@
 .zd-road-h {
   width: 100%;
   height: 48px;
-  background: #2d3340;
+  background: #0f1826;
   border: 1px solid #4B556333;
   border-radius: 3px;
   position: relative;
@@ -36,7 +36,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.68rem;
-  color: #10B981;
+  color: #4b9eff;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -46,7 +46,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.68rem;
-  color: #10B981;
+  color: #4b9eff;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -66,24 +66,24 @@
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  background: #0d2520;
-  border: 2px dashed #10B981;
+  background: #0a1020;
+  border: 2px dashed #4b9eff;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
 }
 .zd-top-scale:hover {
   transform: translateX(4px);
-  box-shadow: 0 0 20px rgba(16,185,129,0.15);
+  box-shadow: 0 0 20px rgba(37,99,235,0.1);
 }
 .zd-ts-cam {
   font-size: 0.68rem;
   font-weight: 700;
-  color: #3B82F6;
+  color: #4b9eff;
   padding: 6px 10px;
-  background: #1e3050;
+  background: #0d1830;
   border-radius: 6px;
-  border: 1px solid #3B82F633;
+  border: 1px solid #4b9eff33;
   white-space: nowrap;
 }
 .zd-ts-platform {
@@ -96,7 +96,7 @@
 .zd-ts-label {
   font-size: 0.82rem;
   font-weight: 800;
-  color: #10B981;
+  color: #4b9eff;
   letter-spacing: 0.04em;
 }
 .zd-ts-truck {
@@ -111,26 +111,26 @@
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  background: #1f1a10;
-  border: 1px solid #F59E0B44;
-  border-left: 4px solid #F59E0B;
+  background: #0d1220;
+  border: 1px solid #93c5fd44;
+  border-left: 4px solid #93c5fd;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
 }
 .zd-top-container:hover {
   transform: translateX(4px);
-  box-shadow: 0 0 20px rgba(245,158,11,0.12);
+  box-shadow: 0 0 20px rgba(37,99,235,0.1);
 }
 .zd-tc-icon { font-size: 1.4rem; }
 .zd-tc-label {
   font-size: 0.82rem;
   font-weight: 800;
-  color: #F59E0B;
+  color: #93c5fd;
 }
 .zd-tc-person {
   font-size: 0.72rem;
-  color: #9ba3c7;
+  color: #7a98bc;
   margin-left: auto;
 }
 
@@ -142,9 +142,9 @@
   gap: 16px;
   padding: 30px 20px;
   width: 100%;
-  background: linear-gradient(180deg, #0f1320 0%, #141824 60%, #1a1f2e 100%);
+  background: linear-gradient(180deg, #0f1320 0%, #0a0d18 60%, #1a1f2e 100%);
   border-radius: 12px;
-  border: 1px solid #F59E0B22;
+  border: 1px solid #93c5fd22;
 }
 
 .zd-fv-row {
@@ -164,8 +164,8 @@
 .zd-fv-platform {
   width: 90px;
   height: 60px;
-  background: #0d2520;
-  border: 2px dashed #10B981;
+  background: #0a1020;
+  border: 2px dashed #4b9eff;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -175,9 +175,9 @@
 .zd-fv-box {
   width: 90px;
   height: 80px;
-  background: #1f1a10;
-  border: 1px solid #F59E0B55;
-  border-left: 3px solid #F59E0B;
+  background: #0d1220;
+  border: 1px solid #93c5fd55;
+  border-left: 3px solid #93c5fd;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -189,16 +189,16 @@
   font-weight: 700;
   text-align: center;
 }
-.zd-fv-scale .zd-fv-lbl { color: #10B981; }
-.zd-fv-cont .zd-fv-lbl { color: #F59E0B; }
+.zd-fv-scale .zd-fv-lbl { color: #4b9eff; }
+.zd-fv-cont .zd-fv-lbl { color: #93c5fd; }
 .zd-fv-cam {
   font-size: 0.55rem;
-  color: #3B82F6;
+  color: #4b9eff;
   font-weight: 600;
 }
 .zd-fv-person {
   font-size: 0.55rem;
-  color: #9ba3c7;
+  color: #7a98bc;
 }
 .zd-fv-road-bottom {
   display: flex;
@@ -207,7 +207,7 @@
   padding: 10px;
   width: 100%;
   max-width: 700px;
-  background: #2d3340;
+  background: #0f1826;
   border-radius: 4px;
   justify-content: center;
 }
