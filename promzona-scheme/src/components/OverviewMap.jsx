@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import './OverviewMap.css'
 
 /*
@@ -42,20 +42,20 @@ function RoadSeg({ label, vertical }) {
 function MiniA() {
   return (
     <div className="m-a">
-      <div className="m-a-barrier">🚧 Шлагбаум</div>
-      <div className="m-a-cams">📷 ANPR · 📱 QR</div>
+      <div className="m-a-barrier"> Шлагбаум</div>
+      <div className="m-a-cams"> ANPR ·  QR</div>
       <div className="m-a-main">
         <div className="m-a-cont m-a-left">
-          <div>🖥️ Офис</div>
-          <div>🗄️ Склад</div>
+          <div> Офис</div>
+          <div> Склад</div>
         </div>
-        <div className="m-a-scale">⚖️ ВЕСЫ</div>
+        <div className="m-a-scale"> ВЕСЫ</div>
         <div className="m-a-cont m-a-right">
-          <div>💻 1С</div>
-          <div>📷 Камеры</div>
+          <div> 1С</div>
+          <div> Камеры</div>
         </div>
       </div>
-      <div className="m-a-barrier">🚧 Шлагбаум</div>
+      <div className="m-a-barrier"> Шлагбаум</div>
     </div>
   )
 }
@@ -73,11 +73,18 @@ function MiniB() {
     <div className="m-b">
       {lanes.map(l => (
         <div key={l.id} className="m-b-lane" style={{ '--lc': l.c }}>
-          <span className="m-b-barrier">🚧</span>
+          {/* Въездной шлагбаум */}
+          <div className="m-b-barrier">
+            <div className="m-b-barrier-post" style={{ background: '#22c55e99' }} />
+            <div className="m-b-barrier-arm" style={{ background: '#22c55e', boxShadow: '0 0 4px #22c55e88' }} />
+          </div>
           <span className="m-b-label">{l.label}</span>
           <div className="m-b-dots">{[...Array(8)].map((_, i) => <span key={i} className="m-b-dot" />)}</div>
-          <span className="m-b-truck">🚛</span>
-          <span className="m-b-barrier">🚧</span>
+          {/* Выездной шлагбаум */}
+          <div className="m-b-barrier">
+            <div className="m-b-barrier-post" style={{ background: '#f59e0b99' }} />
+            <div className="m-b-barrier-arm" style={{ background: '#f59e0b', boxShadow: '0 0 4px #f59e0b88' }} />
+          </div>
         </div>
       ))}
     </div>
@@ -88,10 +95,10 @@ function MiniB() {
 function MiniC() {
   return (
     <div className="m-c">
-      <div className="m-c-cont upper">📺 LED · Верхний конт.</div>
+      <div className="m-c-cont upper"> LED · Верхний конт.</div>
       <div className="m-c-road-between">дорога</div>
-      <div className="m-c-cont lower">🛡️ Охрана · Нижний конт.</div>
-      <div className="m-c-barrier">🚧 Шлагбаум →</div>
+      <div className="m-c-cont lower"> Охрана · Нижний конт.</div>
+      <div className="m-c-barrier"> Шлагбаум →</div>
     </div>
   )
 }
@@ -99,12 +106,12 @@ function MiniC() {
 /* ---- Mini Zone D (top-down: scale-cont-cont-scale-cont-scale) ---- */
 function MiniD() {
   const items = [
-    { t: 's', l: '⚖️ Весы 1' },
-    { t: 'c', l: '💻 Конт. 1' },
-    { t: 'c', l: '💻 Конт. 2' },
-    { t: 's', l: '⚖️ Весы 2' },
-    { t: 'c', l: '💻 Конт. 3' },
-    { t: 's', l: '⚖️ Весы 3' },
+    { t: 's', l: ' Весы 1' },
+    { t: 'c', l: ' Конт. 1' },
+    { t: 'c', l: ' Конт. 2' },
+    { t: 's', l: ' Весы 2' },
+    { t: 'c', l: ' Конт. 3' },
+    { t: 's', l: ' Весы 3' },
   ]
   return (
     <div className="m-d">
@@ -120,16 +127,16 @@ function MiniWait() {
   return (
     <div className="m-wait">
       <div className="m-wait-body">
-        <div className="m-wait-anpr">📷 камера наблюдения</div>
+        <div className="m-wait-anpr"> камера наблюдения</div>
         <div className="m-wait-slots">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="m-wait-slot">
-              <span className="m-wait-truck">🚛</span>
+              <span className="m-wait-truck"></span>
               <span className="m-wait-label">ожидание</span>
             </div>
           ))}
         </div>
-        <div className="m-wait-anpr">📷 камера наблюдения</div>
+        <div className="m-wait-anpr"> камера наблюдения</div>
       </div>
     </div>
   )
@@ -140,13 +147,13 @@ function MiniE() {
   return (
     <div className="m-e">
       <div className="m-e-body">
-        <div className="m-e-excavator">🏗️ Экскаватор 1</div>
-        <div className="m-e-excavator">🏗️ Экскаватор 2</div>
+        <div className="m-e-excavator"> Экскаватор 1</div>
+        <div className="m-e-excavator"> Экскаватор 2</div>
         <div className="m-e-trucks">
-          <span className="m-e-truck">🚛</span>
-          <span className="m-e-truck">🚛</span>
+          <span className="m-e-truck"></span>
+          <span className="m-e-truck"></span>
         </div>
-        <div className="m-e-label">⛏️ Карьер / Погрузка</div>
+        <div className="m-e-label"> Карьер / Погрузка</div>
       </div>
     </div>
   )
@@ -158,19 +165,15 @@ function MiniTop() {
     <div className="m-top">
       <div className="m-top-row">
         <div className="m-top-block canteen">
-          <div className="m-top-icon">🍽️</div>
+          <div className="m-top-icon"></div>
           <div className="m-top-name">Столовая</div>
-          <div className="m-top-detail">🔐 СКУД Hikvision</div>
+          <div className="m-top-detail"> СКУД Hikvision</div>
         </div>
-        <div className="m-top-block dorm">
-          <div className="m-top-icon">🏠</div>
-          <div className="m-top-name">Общежития</div>
-          <div className="m-top-detail">🔐 2 корпуса</div>
-        </div>
+       
         <div className="m-top-block warehouse">
-          <div className="m-top-icon">🏭</div>
+          <div className="m-top-icon"></div>
           <div className="m-top-name">Склады</div>
-          <div className="m-top-detail">📷 Видеонаблюдение</div>
+          <div className="m-top-detail"> Видеонаблюдение</div>
         </div>
       </div>
     </div>
@@ -204,14 +207,14 @@ export default function OverviewMap({ activeZone, onSelectZone }) {
         {/* Entry */}
         <div className="ov-entry">
           <div className="ov-entry-trucks">
-            {[...Array(3)].map((_, i) => <span key={i} className="ov-truck-icon" style={{ display: 'inline-block', transform: 'scaleX(-1)' }}>🚛</span>)}
+            {[...Array(3)].map((_, i) => <span key={i} className="ov-truck-icon" style={{ display: 'inline-block', transform: 'scaleX(-1)' }}></span>)}
           </div>
           <div className="ov-entry-label">Въезд с<br/>трассы</div>
         </div>
 
         <RoadSeg label="→" />
 
-        {/* ── A + B + C column with lane-6 strip below ── */}
+        {/*  A + B + C column with lane-6 strip below  */}
         <div className="ov-abc-col">
           <div className="ov-abc-zones">
             <ZoneBlock id="A" label="ЗОНА А" sublabel="Въезд · Весы · Проверка" color="#4b9eff" glow="rgba(59,130,246,0.35)" isActive={activeZone === 'A'} onClick={onSelectZone}>
@@ -230,7 +233,7 @@ export default function OverviewMap({ activeZone, onSelectZone }) {
           {/* Lane 6 — exactly under A+B+C */}
           <div className="lane6-strip">
             <div className="lane6-track">
-              <span className="lane7-truck-anim">🚛</span>
+              <span className="lane7-truck-anim"></span>
               <div className="lane7-dashes">
                 {[...Array(24)].map((_, i) => <div key={i} className="lane7-dash" />)}
               </div>
@@ -272,15 +275,15 @@ export default function OverviewMap({ activeZone, onSelectZone }) {
 
       {/* System badges */}
       <div className="system-badges">
-        <div className="sys-badge">📷 ANPR‑камеры</div>
-        <div className="sys-badge">📱 QR‑сканеры</div>
-        <div className="sys-badge">🚧 Авто‑шлагбаумы</div>
-        <div className="sys-badge">⚖️ Весы 1С</div>
-        <div className="sys-badge">📺 LED‑экран</div>
-        <div className="sys-badge">🔐 СКУД Hikvision</div>
-        <div className="sys-badge">⛏️ Карьер / Погрузка</div>
-        <div className="sys-badge">🗄️ ЦУК&amp;Л Кыргызкомур</div>
-        <div className="sys-badge">📋 Электронная очередь</div>
+        <div className="sys-badge"> ANPR‑камеры</div>
+        <div className="sys-badge"> QR‑сканеры</div>
+        <div className="sys-badge"> Авто‑шлагбаумы</div>
+        <div className="sys-badge"> Весы 1С</div>
+        <div className="sys-badge"> LED‑экран</div>
+        <div className="sys-badge"> СКУД Hikvision</div>
+        <div className="sys-badge"> Карьер / Погрузка</div>
+        <div className="sys-badge"> ЦУК&amp;Л Кыргызкомур</div>
+        <div className="sys-badge"> Электронная очередь</div>
       </div>
     </div>
   )

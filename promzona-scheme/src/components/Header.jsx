@@ -1,4 +1,4 @@
-﻿import './Header.css'
+import './Header.css'
 
 export default function Header({ onWorkflow, showWorkflow }) {
   return (
@@ -16,7 +16,7 @@ export default function Header({ onWorkflow, showWorkflow }) {
           onClick={onWorkflow}
           title="Логика работы"
         >
-          <span>⚙️</span> Логика работы
+          <span></span> Логика работы
         </button>
         <a
           className="header-btn"
@@ -25,7 +25,7 @@ export default function Header({ onWorkflow, showWorkflow }) {
           rel="noreferrer"
           title="Кыргызкомур ЦУК&Л"
         >
-          <span>🔗</span> ЦУК&amp;Л
+          <span></span> ЦУК&amp;Л
         </a>
       </div>
     </header>

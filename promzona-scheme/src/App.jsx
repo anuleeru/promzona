@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import OverviewMap from './components/OverviewMap'
 import ZoneDetail from './components/ZoneDetail'
 import Sidebar from './components/Sidebar'

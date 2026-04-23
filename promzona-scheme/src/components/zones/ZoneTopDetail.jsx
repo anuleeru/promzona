@@ -27,7 +27,7 @@ export default function ZoneTopDetail() {
       {view === 0 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: COLOR }}>
-            🔭 Схема — Промзона верхняя
+             Схема — Промзона верхняя
           </div>
           <div className="detail-section-body">
             <div style={{
@@ -39,7 +39,7 @@ export default function ZoneTopDetail() {
                 borderRadius: 10, padding: 12, gridColumn: '1 / -1',
               }}>
                 <div style={{ fontSize: '0.72rem', fontWeight: 700, color: COLOR, marginBottom: 8, display: 'flex', gap: 6, alignItems: 'center' }}>
-                  🍽️ СТОЛОВАЯ
+                   СТОЛОВАЯ
                   <span style={{ fontSize: '0.6rem', color: '#485f7a', fontWeight: 400 }}>— оборудование Hikvision, СКУД</span>
                 </div>
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -47,60 +47,38 @@ export default function ZoneTopDetail() {
                     flex: 1, minWidth: 100, background: '#111828', border: `1px solid ${COLOR}22`,
                     borderRadius: 6, padding: '8px 10px', textAlign: 'center',
                   }}>
-                    <div style={{ fontSize: '1.3rem', marginBottom: 4 }}>🔐</div>
+                    <div style={{ fontSize: '1.3rem', marginBottom: 4 }}></div>
                     <div style={{ fontSize: '0.68rem', color: '#f0f4ff', fontWeight: 600 }}>СКУД — вход</div>
                     <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>T-CAM-1<br/>Hikvision терминал</div>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 4, flex: 2, minWidth: 120 }}>
                     <div style={{ background: '#090c16', border: `1px solid #1c2b44`, borderRadius: 6, padding: '6px 10px', fontSize: '0.65rem', color: '#7a98bc' }}>
-                      👤 Сотрудник прикладывает карту/биометрию → система списывает питание → отмечает в АИС
+                       Сотрудник прикладывает карту/биометрию → система списывает питание → отмечает в АИС
                     </div>
                     <div style={{ background: '#090c16', border: `1px solid #1c2b44`, borderRadius: 6, padding: '6px 10px', fontSize: '0.65rem', color: '#7a98bc' }}>
-                      🍽️ Зал столовой — обеденная зона для вахтового персонала
+                       Зал столовой — обеденная зона для вахтового персонала
                     </div>
                   </div>
-                  <div style={{
-                    flex: 1, minWidth: 100, background: '#111828', border: `1px solid ${COLOR}22`,
-                    borderRadius: 6, padding: '8px 10px', textAlign: 'center',
-                  }}>
-                    <div style={{ fontSize: '1.3rem', marginBottom: 4 }}>🔐</div>
-                    <div style={{ fontSize: '0.68rem', color: '#f0f4ff', fontWeight: 600 }}>СКУД — выход</div>
-                    <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>T-CAM-2<br/>Фиксация выхода</div>
-                  </div>
+                
                 </div>
               </div>
 
               {/* Общежития */}
-              <div style={{ background: '#0e1422', border: `1px solid #1c2b44`, borderRadius: 10, padding: 12 }}>
-                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: COLOR, marginBottom: 8 }}>🏠 ОБЩЕЖИТИЯ</div>
-                {[1, 2].map(n => (
-                  <div key={n} style={{
-                    background: '#111828', border: `1px solid #1c2b44`,
-                    borderRadius: 6, padding: '8px 10px', marginBottom: 6,
-                    display: 'flex', gap: 8, alignItems: 'center',
-                  }}>
-                    <div style={{ fontSize: '1.2rem' }}>🏠</div>
-                    <div>
-                      <div style={{ fontSize: '0.68rem', color: '#f0f4ff', fontWeight: 600 }}>Корпус №{n}</div>
-                      <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>🔐 T-CAM-{n + 2} · СКУД вход</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            
 
               {/* Склады */}
               <div style={{ background: '#0e1422', border: `1px solid #1c2b44`, borderRadius: 10, padding: 12 }}>
-                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: COLOR, marginBottom: 8 }}>🏭 СКЛАДЫ</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: COLOR, marginBottom: 8 }}> СКЛАДЫ</div>
                 {[1, 2].map(n => (
                   <div key={n} style={{
                     background: '#111828', border: `1px solid #1c2b44`,
                     borderRadius: 6, padding: '8px 10px', marginBottom: 6,
                     display: 'flex', gap: 8, alignItems: 'center',
                   }}>
-                    <div style={{ fontSize: '1.2rem' }}>🏭</div>
+                    <div style={{ fontSize: '1.2rem' }}></div>
                     <div>
                       <div style={{ fontSize: '0.68rem', color: '#f0f4ff', fontWeight: 600 }}>Склад №{n}</div>
-                      <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>📷 T-CAM-{n + 4} · Видеонаблюдение</div>
+                      <div style={{ fontSize: '0.6rem', color: '#485f7a' }}> T-CAM-{n + 4} · Видеонаблюдение</div>
                     </div>
                   </div>
                 ))}
@@ -124,7 +102,7 @@ export default function ZoneTopDetail() {
       {view === 1 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: COLOR }}>
-            🍽️ Столовая — Система СКУД и Hikvision
+             Столовая — Система СКУД и Hikvision
           </div>
           <div className="detail-section-body">
             <div style={{
@@ -132,7 +110,7 @@ export default function ZoneTopDetail() {
               borderRadius: 6, padding: 12, marginBottom: 4,
             }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#f0f4ff', marginBottom: 6 }}>
-                🔐 Система СКУД Hikvision в столовой
+                 Система СКУД Hikvision в столовой
               </div>
               <div style={{ fontSize: '0.7rem', color: '#7a98bc', lineHeight: 1.7 }}>
                 На входе и выходе столовой установлены биометрические терминалы Hikvision.
@@ -140,11 +118,11 @@ export default function ZoneTopDetail() {
               </div>
               <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 4 }}>
                 {[
-                  '📋 Отмечает сотрудника в журнале посещаемости',
-                  '🍽️ Списывает стоимость питания с лицевого счёта',
-                  '⏱️ Фиксирует время входа и выхода',
-                  '📊 Формирует ежедневный отчёт по питанию',
-                  '🔗 Передаёт данные в Единую АИС Кыргызкомур',
+                  ' Отмечает сотрудника в журнале посещаемости',
+                  ' Списывает стоимость питания с лицевого счёта',
+                  ' Фиксирует время входа и выхода',
+                  ' Формирует ежедневный отчёт по питанию',
+                  ' Передаёт данные в Единую АИС Кыргызкомур',
                 ].map((item, i) => (
                   <div key={i} style={{
                     fontSize: '0.68rem', color: '#7a98bc', padding: '4px 8px',
@@ -156,17 +134,10 @@ export default function ZoneTopDetail() {
 
             {[
               {
-                icon: '🔐', title: 'Терминал СКУД — вход (T-CAM-1)',
+                icon: '', title: 'Терминал СКУД — вход (T-CAM-1)',
                 items: ['Hikvision биометрический/карточный считыватель', 'Распознавание лица / RFID карта', 'Высота установки: 1.4 м (уровень лица)', 'Интегрирован с системой учёта питания'],
               },
-              {
-                icon: '🔐', title: 'Терминал СКУД — выход (T-CAM-2)',
-                items: ['Фиксирует время выхода из столовой', 'Рассчитывает продолжительность обеда', 'Формирует запись в журнале посещений', 'Синхронизирует данные с АИС'],
-              },
-              {
-                icon: '🔐', title: 'СКУД — Общежития (T-CAM-3, T-CAM-4)',
-                items: ['Hikvision терминалы на входе в каждый корпус', 'Контроль присутствия вахтового персонала', 'Запись времени прихода / ухода', 'Тревожная кнопка на каждом терминале'],
-              },
+            
             ].map((block, i) => (
               <div key={i} style={{
                 background: '#111828', border: `1px solid #1c2b44`,
@@ -192,19 +163,19 @@ export default function ZoneTopDetail() {
       {view === 2 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: COLOR }}>
-            🔧 Оборудование Промзоны верхней
+             Оборудование Промзоны верхней
           </div>
           <div className="detail-section-body">
             <div style={{
               display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 10,
             }}>
               {[
-                { icon: '🔐', label: '6×', sub: 'Терминалов СКУД Hikvision' },
-                { icon: '📷', label: '4×', sub: 'Видеокамеры наблюдения' },
-                { icon: '🏠', label: '2×', sub: 'Корпуса общежитий' },
-                { icon: '🏭', label: '2×', sub: 'Производственных склада' },
-                { icon: '🍽️', label: '1×', sub: 'Столовая персонала' },
-                { icon: '📡', label: 'АИС', sub: 'Интеграция Кыргызкомур' },
+                { icon: '', label: '4×', sub: 'Терминалов СКУД Hikvision' },
+                { icon: '', label: '4×', sub: 'Видеокамеры наблюдения' },
+                { icon: '', label: '2×', sub: 'Корпуса общежитий' },
+                { icon: '', label: '2×', sub: 'Производственных склада' },
+                { icon: '', label: '1×', sub: 'Столовая персонала' },
+                { icon: '', label: 'АИС', sub: 'Интеграция Кыргызкомур' },
               ].map((item, i) => (
                 <div key={i} style={{
                   background: '#0e1422', border: `1px solid #1c2b44`,
@@ -220,7 +191,7 @@ export default function ZoneTopDetail() {
             {cameras.map(cam => (
               <div key={cam.id} className="cam-card">
                 <div className="cam-icon" style={{ background: `${COLOR}22`, border: `1px solid ${COLOR}44`, color: COLOR }}>
-                  {cam.type === 'skud' ? '🔐' : '🎥'}
+                  {cam.type === 'skud' ? '' : ''}
                 </div>
                 <div>
                   <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#f0f4ff', marginBottom: 2 }}>{cam.label}</div>

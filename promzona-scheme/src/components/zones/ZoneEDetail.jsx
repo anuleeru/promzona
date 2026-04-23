@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import '../ZoneDetail.css'
 
 const COLOR = '#4b9eff'
@@ -24,7 +24,7 @@ export default function ZoneEDetail() {
       {view === 0 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: COLOR }}>
-            ⛏️ Схема — Зона Е «Карьер и погрузка»
+             Схема — Зона Е «Карьер и погрузка»
           </div>
           <div className="detail-section-body">
             <div className="schema-view">
@@ -35,10 +35,10 @@ export default function ZoneEDetail() {
                 borderRadius: 10, padding: 14, display: 'flex', gap: 12, flexWrap: 'wrap',
               }}>
                 <div style={{ flex: 1, minWidth: 120 }}>
-                  <div style={{ fontSize: '0.65rem', color: COLOR, fontWeight: 700, marginBottom: 8 }}>⛏️ КАРЬЕР</div>
+                  <div style={{ fontSize: '0.65rem', color: COLOR, fontWeight: 700, marginBottom: 8 }}> КАРЬЕР</div>
                   {[
-                    { label: 'Экскаватор №1', icon: '🏗️' },
-                    { label: 'Экскаватор №2', icon: '🏗️' },
+                    { label: 'Экскаватор №1', icon: '' },
+                    { label: 'Экскаватор №2', icon: '' },
                   ].map((ex, i) => (
                     <div key={i} style={{
                       background: '#111828', border: `1px solid ${COLOR}22`,
@@ -55,14 +55,14 @@ export default function ZoneEDetail() {
                 </div>
 
                 <div style={{ flex: 1, minWidth: 120 }}>
-                  <div style={{ fontSize: '0.65rem', color: COLOR, fontWeight: 700, marginBottom: 8 }}>🚛 ЗОНА ПОГРУЗКИ</div>
+                  <div style={{ fontSize: '0.65rem', color: COLOR, fontWeight: 700, marginBottom: 8 }}> ЗОНА ПОГРУЗКИ</div>
                   {[...Array(3)].map((_, i) => (
                     <div key={i} style={{
                       background: '#0e1422', border: `1px solid ${COLOR}22`,
                       borderRadius: 4, padding: '4px 8px', marginBottom: 4,
                       display: 'flex', alignItems: 'center', gap: 6,
                     }}>
-                      <span style={{ fontSize: '0.85rem' }}>🚛</span>
+                      <span style={{ fontSize: '0.85rem' }}></span>
                       <div style={{ flex: 1, height: 8, background: '#1c2b44', borderRadius: 2, position: 'relative' }}>
                         <div style={{ width: `${40 + i * 20}%`, height: '100%', background: `${COLOR}66`, borderRadius: 2 }} />
                       </div>
@@ -92,15 +92,15 @@ export default function ZoneEDetail() {
       {view === 1 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: COLOR }}>
-            ⚙️ Логика работы
+             Логика работы
           </div>
           <div className="detail-section-body">
             {[
-              { n: 1, icon: '🚛', title: 'Въезд в карьерную зону', desc: 'Транспортное средство прибывает из Зоны Ожидания (Кой-Коро) в карьерную зону.' },
-              { n: 2, icon: '🏗️', title: 'Направление к экскаватору', desc: 'Машина направляется к назначенному экскаватору согласно талону.' },
-              { n: 3, icon: '⛏️', title: 'Погрузка угля', desc: 'Экскаватор производит погрузку угля в кузов. Камеры видеофиксации записывают весь процесс.' },
-              { n: 4, icon: '📊', title: 'Фиксация данных погрузки', desc: 'Объём и состав погрузки фиксируются в системе и привязываются к накладной в АИС Кыргызкомур.' },
-              { n: 5, icon: '⚖️', title: 'Маршрут в Зону Д', desc: 'Загруженный транспорт направляется в Зону Д для взвешивания полной тары и финального оформления рейса.' },
+              { n: 1, icon: '', title: 'Въезд в карьерную зону', desc: 'Транспортное средство прибывает из Зоны Ожидания (Кой-Коро) в карьерную зону.' },
+              { n: 2, icon: '', title: 'Направление к экскаватору', desc: 'Машина направляется к назначенному экскаватору согласно талону.' },
+              { n: 3, icon: '', title: 'Погрузка угля', desc: 'Экскаватор производит погрузку угля в кузов. Камеры видеофиксации записывают весь процесс.' },
+              { n: 4, icon: '', title: 'Фиксация данных погрузки', desc: 'Объём и состав погрузки фиксируются в системе и привязываются к накладной в АИС Кыргызкомур.' },
+              { n: 5, icon: '', title: 'Маршрут в Зону Д', desc: 'Загруженный транспорт направляется в Зону Д для взвешивания полной тары и финального оформления рейса.' },
             ].map(step => (
               <div key={step.n} style={{
                 background: '#111828', border: `1px solid ${COLOR}22`,

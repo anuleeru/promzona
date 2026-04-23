@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { CAMERAS } from '../../data/zones'
 import '../ZoneDetail.css'
 
@@ -23,14 +23,14 @@ export default function ZoneCDetail() {
       {view === 0 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: '#4b9eff' }}>
-            🔭 Схема сверху — Зона С
+             Схема сверху — Зона С
           </div>
           <div className="detail-section-body">
             <div className="schema-view">
               <div style={{ fontSize: '0.68rem', color: '#485f7a', marginBottom: 8 }}>← Машины выезжают из Зоны Б по вызову</div>
               <div className="schema-row">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'center' }}>
-                  <div className="schema-block led" style={{ fontSize: '0.62rem', width: 130 }}>📺 LED-ЭКРАН<br/>½ верхнего контейнера</div>
+                  <div className="schema-block led" style={{ fontSize: '0.62rem', width: 130 }}> LED-ЭКРАН<br/>½ верхнего контейнера</div>
                   <div className="schema-block" style={{ fontSize: '0.62rem', width: 130, borderColor: '#4b9eff', color: '#93c5fd', background: '#0a2018' }}>2 эт. — ЗОНА ОТДЫХА СБ</div>
                   <div className="schema-block office" style={{ fontSize: '0.62rem', width: 130 }}>1 эт. — ОПЕРАТОР СБ<br/>Кнопка вызова</div>
                   <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>ЛЕВЫЙ КОНТЕЙНЕР</div>
@@ -43,23 +43,23 @@ export default function ZoneCDetail() {
                       width: 24, height: 32, background: '#1a2235',
                       border: '1px solid #4b9eff44', borderRadius: 3,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.65rem',
-                    }}>🚛</div>
+                    }}></div>
                     <div style={{
                       width: 24, height: 32, background: '#1a2235',
                       border: '1px solid #4b9eff44', borderRadius: 3,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.65rem', opacity: 0.4,
-                    }}>🚛</div>
+                    }}></div>
                   </div>
                   <div className="schema-row">
-                    <div className="schema-block cam" style={{ fontSize: '0.6rem' }}>📷 ANPR</div>
-                    <div className="schema-block cam" style={{ fontSize: '0.6rem' }}>📱 QR</div>
+                    <div className="schema-block cam" style={{ fontSize: '0.6rem' }}> ANPR</div>
+                    <div className="schema-block cam" style={{ fontSize: '0.6rem' }}> QR</div>
                   </div>
-                  <div className="schema-block barrier" style={{ fontSize: '0.62rem' }}>🚧 Выездной шлагбаум</div>
+                  <div className="schema-block barrier" style={{ fontSize: '0.62rem' }}> Выездной шлагбаум</div>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'center' }}>
                   <div className="schema-block" style={{ fontSize: '0.62rem', width: 110, borderColor: '#93c5fd', color: '#93c5fd', background: '#251d0e' }}>
-                    🛡️ ОХРАННИК СБ<br/>Охранная | Правый кон.
+                     ОХРАННИК СБ<br/>Охранная | Правый кон.
                   </div>
                   <div style={{ fontSize: '0.6rem', color: '#485f7a' }}>ПРАВЫЙ КОНТЕЙНЕР</div>
                 </div>
@@ -85,7 +85,7 @@ export default function ZoneCDetail() {
       {view === 1 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: '#4b9eff' }}>
-            🏗️ Вид спереди — Зона С
+             Вид спереди — Зона С
           </div>
           <div className="detail-section-body">
             <div className="floor-diagram">
@@ -93,7 +93,7 @@ export default function ZoneCDetail() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <div className="floor-rooms">
                   <div className="floor-room" style={{ borderColor: '#4b9eff', color: '#93c5fd', background: '#071a10' }}>
-                    🌟 LED‑ЭКРАН<br/><span style={{ fontSize: '0.6rem', opacity: 0.7 }}>(на внешней стене, ½ длины контейнера)</span>
+                     LED‑ЭКРАН<br/><span style={{ fontSize: '0.6rem', opacity: 0.7 }}>(на внешней стене, ½ длины контейнера)</span>
                   </div>
                 </div>
                 <div className="floor-rooms">
@@ -125,7 +125,7 @@ export default function ZoneCDetail() {
       {view === 2 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: '#4b9eff' }}>
-            📺 LED‑экран — логика отображения
+             LED‑экран — логика отображения
           </div>
           <div className="detail-section-body">
             {/* Mock LED screen */}
@@ -141,7 +141,7 @@ export default function ZoneCDetail() {
                 СИСТЕМА ЭЛЕКТРОННОЙ ОЧЕРЕДИ · Кара-Кече
               </div>
               <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#4b9eff', fontFamily: 'monospace', letterSpacing: '0.08em' }}>
-                🚛 А 745 ВКР
+                 А 745 ВКР
               </div>
               <div style={{ fontSize: '0.85rem', color: '#fff', marginTop: 8, opacity: 0.9 }}>
                 ТАЛОН: Б-1-007 · Полоса 1 · ТОП-база
@@ -181,13 +181,13 @@ export default function ZoneCDetail() {
       {view === 3 && (
         <div className="detail-section">
           <div className="detail-section-title" style={{ color: '#4b9eff' }}>
-            📷 Камеры и системы Зоны С
+             Камеры и системы Зоны С
           </div>
           <div className="detail-section-body">
             {CAMERAS.zoneC.map(cam => (
               <div key={cam.id} className="cam-card">
                 <div className={`cam-icon ${cam.type}`}>
-                  {cam.type === 'anpr' ? '📷' : '📱'}
+                  {cam.type === 'anpr' ? '' : ''}
                 </div>
                 <div>
                   <div className="cam-id">{cam.id}</div>
@@ -198,7 +198,7 @@ export default function ZoneCDetail() {
             ))}
 
             <div className="barrier-card">
-              <div className="barrier-icon">🚧</div>
+              <div className="barrier-icon"></div>
               <div>
                 <div className="barrier-name">Финальный выездной шлагбаум — С-ШЛ-1</div>
                 <div className="barrier-desc">

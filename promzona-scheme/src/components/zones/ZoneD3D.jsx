@@ -1,11 +1,11 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import Tooltip from '../Tooltip'
 import './Zone3D.css'
 import './ZoneD3D.css'
 
 const VIEWS = [
-  { id: 'top',   label: '🔭 Вид сверху' },
-  { id: 'front', label: '🏗️ Вид спереди' },
+  { id: 'top',   label: ' Вид сверху' },
+  { id: 'front', label: ' Вид спереди' },
 ]
 
 /*
@@ -59,20 +59,20 @@ export default function ZoneD3D() {
             {LAYOUT.map((item, i) => (
               <div key={i}>
                 {item.type === 'scale' ? (
-                  <Tooltip title={`⚖️ ${item.label}`} text={`Весы полной тары. Камера ${item.cam}. 1С-специалист записывает полный вес. Нетто = Полная − Пустая.`} side="right">
+                  <Tooltip title={` ${item.label}`} text={`Весы полной тары. Камера ${item.cam}. 1С-специалист записывает полный вес. Нетто = Полная − Пустая.`} side="right">
                     <div className="zd-top-scale">
-                      <div className="zd-ts-cam">📷 {item.cam}</div>
+                      <div className="zd-ts-cam"> {item.cam}</div>
                       <div className="zd-ts-platform">
-                        <span className="zd-ts-icon">⚖️</span>
+                        <span className="zd-ts-icon"></span>
                         <span className="zd-ts-label">{item.label}</span>
-                        <span className="zd-ts-truck">🚛↙</span>
+                        <span className="zd-ts-truck">↙</span>
                       </div>
                     </div>
                   </Tooltip>
                 ) : (
-                  <Tooltip title={`🏢 ${item.label}`} text={`${item.person} — записывает полный вес в накладную. Нетто = Полная − Пустая тара. Данные → ЦУК&Л.`} side="right">
+                  <Tooltip title={` ${item.label}`} text={`${item.person} — записывает полный вес в накладную. Нетто = Полная − Пустая тара. Данные → ЦУК&Л.`} side="right">
                     <div className="zd-top-container">
-                      <span className="zd-tc-icon">💻</span>
+                      <span className="zd-tc-icon"></span>
                       <span className="zd-tc-label">{item.label}</span>
                       <span className="zd-tc-person">{item.person}</span>
                     </div>
@@ -103,15 +103,15 @@ export default function ZoneD3D() {
                 {item.type === 'scale' ? (
                   <>
                     <div className="zd-fv-platform">
-                      <span>⚖️</span>
+                      <span></span>
                     </div>
                     <div className="zd-fv-lbl">{item.label}</div>
-                    <div className="zd-fv-cam">📷 {item.cam}</div>
+                    <div className="zd-fv-cam"> {item.cam}</div>
                   </>
                 ) : (
                   <>
                     <div className="zd-fv-box">
-                      <span>💻</span>
+                      <span></span>
                     </div>
                     <div className="zd-fv-lbl">{item.label}</div>
                     <div className="zd-fv-person">{item.person}</div>
@@ -132,21 +132,21 @@ export default function ZoneD3D() {
       <div className="zone3d-info">
         <div className="z3d-info-grid">
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#93c5fd' }}>⚖️</div>
+            <div className="z3d-ic-icon" style={{ color: '#93c5fd' }}></div>
             <div>
               <div className="z3d-ic-title">3 весовых</div>
               <div className="z3d-ic-text">Полная тара. Нетто = Полная − Пустая</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#93c5fd' }}>💻</div>
+            <div className="z3d-ic-icon" style={{ color: '#93c5fd' }}></div>
             <div>
               <div className="z3d-ic-title">3 контейнера</div>
               <div className="z3d-ic-text">1С-специалисты. Данные → ЦУК&amp;Л Кыргызкомур</div>
             </div>
           </div>
           <div className="z3d-info-card">
-            <div className="z3d-ic-icon" style={{ color: '#4b9eff' }}>📷</div>
+            <div className="z3d-ic-icon" style={{ color: '#4b9eff' }}></div>
             <div>
               <div className="z3d-ic-title">3 камеры</div>
               <div className="z3d-ic-text">По 1 на каждые весы. Фиксация номера ТС</div>
