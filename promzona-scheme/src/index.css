@@ -2,26 +2,40 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg-canvas: #1a1f2e;
-  --bg-panel: #232838;
-  --bg-card: #2a2f45;
-  --bg-hover: #323751;
-  --border: #3d4463;
-  --border-light: #4d5580;
-  --text-primary: #e8eaf6;
-  --text-secondary: #9ba3c7;
-  --text-muted: #666d99;
-  --zone-a: #3B82F6;
-  --zone-b: #8B5CF6;
-  --zone-c: #10B981;
-  --zone-d: #F59E0B;
-  --road: #374151;
-  --font: 'Inter', -apple-system, sans-serif;
+  --bg-deep:    #06080e;
+  --bg-canvas:  #090c16;
+  --bg-panel:   #0d1220;
+  --bg-card:    #111828;
+  --bg-hover:   #172035;
+  --border:     #1c2b44;
+  --border-light:#243652;
+  --text-primary:#f0f4ff;
+  --text-secondary:#7a98bc;
+  --text-muted: #485f7a;
+  --blue-bright:#4b9eff;
+  --blue-main:  #2563eb;
+  --blue-dark:  #1a3a80;
+  --blue-pale:  #93c5fd;
+  --zone-a:     #4b9eff;
+  --zone-b:     #2563eb;
+  --zone-c:     #60a5fa;
+  --zone-d:     #93c5fd;
+  --road:       #0f1826;
+  --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
   color-scheme: dark;
 }
 html { font-size: 16px; }
-body { font-family: var(--font); background: var(--bg-canvas); color: var(--text-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font);
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.01em;
+}
 #root { min-height: 100vh; display: flex; flex-direction: column; }
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-canvas); }
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
 ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--blue-dark); }

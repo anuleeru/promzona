@@ -13,7 +13,7 @@ export default function ZoneDDetail() {
         {VIEWS.map((v, i) => (
           <button key={i}
             className={`view-tab ${view === i ? 'active' : ''}`}
-            style={{ '--tab-color': '#F59E0B' }}
+            style={{ '--tab-color': '#93c5fd' }}
             onClick={() => setView(i)}
           >{v}</button>
         ))}
@@ -22,39 +22,39 @@ export default function ZoneDDetail() {
       {/* TOP VIEW */}
       {view === 0 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#F59E0B' }}>
-            🔭 Схема сверху — Зона Д (3 весовых пункта)
+          <div className="detail-section-title" style={{ color: '#93c5fd' }}>
+             Схема сверху — Зона Д (3 весовых пункта)
           </div>
           <div className="detail-section-body">
             <div className="schema-view">
-              <div style={{ fontSize: '0.68rem', color: '#666d99', marginBottom: 8 }}>
+              <div style={{ fontSize: '0.68rem', color: '#485f7a', marginBottom: 8 }}>
                 ← Машины прибывают из Зоны С (загруженные углём)
               </div>
 
               {[1, 2, 3].map(n => (
                 <div key={n} style={{
                   display: 'flex', alignItems: 'center', gap: 8,
-                  background: '#1a1e2e', border: '1px dashed #F59E0B55',
-                  borderLeft: '3px solid #F59E0B',
+                  background: '#1a1e2e', border: '1px dashed #93c5fd55',
+                  borderLeft: '3px solid #93c5fd',
                   borderRadius: 6, padding: '8px 12px', width: '100%',
                 }}>
-                  <span style={{ fontSize: '1rem' }}>⚖️</span>
+                  <span style={{ fontSize: '1rem' }}></span>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#F59E0B' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#93c5fd' }}>
                       Весы №{n} — Д-ВЕС-{n}
                     </div>
-                    <div style={{ fontSize: '0.65rem', color: '#9ba3c7', marginTop: 2 }}>
+                    <div style={{ fontSize: '0.65rem', color: '#7a98bc', marginTop: 2 }}>
                       1С-специалист · Фиксация полной тары · Расчёт нетто
                     </div>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                    <div className="schema-block cam" style={{ fontSize: '0.6rem' }}>📷 Д-CAM-{n}</div>
-                    <div className="schema-block barrier" style={{ fontSize: '0.6rem' }}>🚧 Шлагбаум</div>
+                    <div className="schema-block cam" style={{ fontSize: '0.6rem' }}> Д-CAM-{n}</div>
+                    <div className="schema-block barrier" style={{ fontSize: '0.6rem' }}> Шлагбаум</div>
                   </div>
                 </div>
               ))}
 
-              <div style={{ fontSize: '0.68rem', color: '#666d99', marginTop: 8, textAlign: 'center' }}>
+              <div style={{ fontSize: '0.68rem', color: '#485f7a', marginTop: 8, textAlign: 'center' }}>
                 ↓ После взвешивания → возврат в Зону С → финальный выезд
               </div>
             </div>
@@ -76,13 +76,13 @@ export default function ZoneDDetail() {
       {/* WEIGHING PROCESS */}
       {view === 1 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#F59E0B' }}>
-            ⚖️ Процесс взвешивания полной тары
+          <div className="detail-section-title" style={{ color: '#93c5fd' }}>
+             Процесс взвешивания полной тары
           </div>
           <div className="detail-section-body">
             <div className="schema-view">
               <div className="schema-row">
-                <div className="schema-block" style={{ fontSize: '0.65rem' }}>🚛 Машина загружена углём</div>
+                <div className="schema-block" style={{ fontSize: '0.65rem' }}> Машина загружена углём</div>
               </div>
               <div className="schema-arrow">↓</div>
               <div className="schema-row">
@@ -90,38 +90,38 @@ export default function ZoneDDetail() {
               </div>
               <div className="schema-arrow">↓</div>
               <div className="schema-row">
-                <div className="schema-block cam" style={{ fontSize: '0.65rem' }}>📷 ANPR фиксирует номер ТС</div>
+                <div className="schema-block cam" style={{ fontSize: '0.65rem' }}> ANPR фиксирует номер ТС</div>
               </div>
               <div className="schema-arrow">↓</div>
               <div className="schema-row">
-                <div className="schema-block scale" style={{ fontSize: '0.65rem' }}>⚖️ Фиксируется ПОЛНЫЙ ВЕС</div>
+                <div className="schema-block scale" style={{ fontSize: '0.65rem' }}> Фиксируется ПОЛНЫЙ ВЕС</div>
               </div>
               <div className="schema-arrow">↓</div>
               <div className="schema-row">
                 <div className="schema-block office" style={{ fontSize: '0.65rem' }}>
-                  💻 1С-специалист вносит в накладную:<br/>
+                   1С-специалист вносит в накладную:<br/>
                   Полная тара / Нетто = Полн. − Пуст.
                 </div>
               </div>
               <div className="schema-arrow">↓</div>
               <div className="schema-row">
-                <div className="schema-block" style={{ fontSize: '0.65rem', borderColor: '#10B981', color: '#6ee7b7', background: '#071a10' }}>
-                  ✅ Данные → ЦУК&Л Кыргызкомур
+                <div className="schema-block" style={{ fontSize: '0.65rem', borderColor: '#4b9eff', color: '#93c5fd', background: '#071a10' }}>
+                   Данные → ЦУК&Л Кыргызкомур
                 </div>
               </div>
               <div className="schema-arrow">↓</div>
               <div className="schema-row">
-                <div className="schema-block" style={{ fontSize: '0.65rem' }}>🚛 Машина выезжает → Зона С → Финальный шлагбаум</div>
+                <div className="schema-block" style={{ fontSize: '0.65rem' }}> Машина выезжает → Зона С → Финальный шлагбаум</div>
               </div>
             </div>
 
             <div className="info-card">
               <div className="info-card-title">Формула расчёта нетто-веса</div>
-              <div style={{ padding: '10px', background: '#0e1220', border: '1px solid #F59E0B44', borderRadius: 6, marginTop: 4 }}>
-                <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#F59E0B', textAlign: 'center' }}>
+              <div style={{ padding: '10px', background: '#0e1220', border: '1px solid #93c5fd44', borderRadius: 6, marginTop: 4 }}>
+                <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#93c5fd', textAlign: 'center' }}>
                   Нетто = Полная тара − Пустая тара
                 </div>
-                <div style={{ fontSize: '0.65rem', color: '#9ba3c7', textAlign: 'center', marginTop: 6 }}>
+                <div style={{ fontSize: '0.65rem', color: '#7a98bc', textAlign: 'center', marginTop: 6 }}>
                   Пустая тара — из накладной Зоны А<br/>
                   Полная тара — с весов Зоны Д
                 </div>
@@ -149,13 +149,13 @@ export default function ZoneDDetail() {
       {/* CAMERAS */}
       {view === 2 && (
         <div className="detail-section">
-          <div className="detail-section-title" style={{ color: '#F59E0B' }}>
-            📷 Камеры и системы Зоны Д
+          <div className="detail-section-title" style={{ color: '#93c5fd' }}>
+             Камеры и системы Зоны Д
           </div>
           <div className="detail-section-body">
             {CAMERAS.zoneD.map(cam => (
               <div key={cam.id} className="cam-card">
-                <div className="cam-icon weight">⚖️</div>
+                <div className="cam-icon weight"></div>
                 <div>
                   <div className="cam-id">{cam.id}</div>
                   <div className="cam-name">{cam.label}</div>
@@ -166,7 +166,7 @@ export default function ZoneDDetail() {
 
             {[1, 2, 3].map(n => (
               <div key={n} className="barrier-card">
-                <div className="barrier-icon">🚧</div>
+                <div className="barrier-icon"></div>
                 <div>
                   <div className="barrier-name">Шлагбаум весового пункта №{n} — Д-ШЛ-{n}</div>
                   <div className="barrier-desc">

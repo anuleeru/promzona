@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import OverviewMap from './components/OverviewMap'
 import ZoneDetail from './components/ZoneDetail'
 import Sidebar from './components/Sidebar'
@@ -11,12 +11,15 @@ import ZoneD3D from './components/zones/ZoneD3D'
 import './App.css'
 
 const ZONE_MODAL_INFO = {
-  A: { label: 'ЗОНА А', subtitle: 'Въезд · Весы пустой тары · Камеры ANPR/QR', color: '#3B82F6' },
-  C: { label: 'ЗОНА С', subtitle: 'Оператор СБ · LED-экран · Финальный выезд', color: '#10B981' },
-  D: { label: 'ЗОНА Д', subtitle: '3 весовых · Полная тара · 1С-специалист', color: '#F59E0B' },
+  A: { label: 'ЗОНА А', subtitle: 'Въезд · Весы пустой тары · Камеры ANPR/QR', color: '#4b9eff' },
+  C: { label: 'ЗОНА С', subtitle: 'Оператор СБ · LED-экран · Финальный выезд', color: '#4b9eff' },
+  D: { label: 'ЗОНА Д', subtitle: '3 весовых · Полная тара · 1С-специалист', color: '#93c5fd' },
 }
 
+// Zones that open in 3D modal
 const ZONE_3D = { A: ZoneA3D, C: ZoneC3D, D: ZoneD3D }
+// Zones that open in sidebar panel (no 3D view)
+const SIDEBAR_ZONES = new Set(['B', 'Wait', 'E', 'Top'])
 
 export default function App() {
   const [activeZone, setActiveZone] = useState(null)
@@ -31,6 +34,8 @@ export default function App() {
     }
   }
 
+  const handleClose = () => { setActiveZone(null) }
+
   const Zone3DComponent = modalZone ? ZONE_3D[modalZone] : null
 
   return (
@@ -41,8 +46,8 @@ export default function App() {
           <OverviewMap activeZone={activeZone || modalZone} onSelectZone={handleSelectZone} />
         </div>
         {activeZone && (
-          <Sidebar onClose={() => setActiveZone(null)}>
-            <ZoneDetail zoneId={activeZone} onClose={() => setActiveZone(null)} />
+          <Sidebar onClose={handleClose}>
+            <ZoneDetail zoneId={activeZone} onClose={handleClose} />
           </Sidebar>
         )}
       </div>
@@ -53,7 +58,7 @@ export default function App() {
       )}
       {showWorkflow && (
         <ZoneModal 
-          zone={{ label: 'ЛОГИКА РАБОТЫ', subtitle: 'Полный цикл транспорта от въезда до выезда', color: '#8B5CF6' }} 
+          zone={{ label: 'ЛОГИКА РАБОТЫ', subtitle: 'Полный цикл транспорта от въезда до выезда', color: '#60a5fa' }} 
           onClose={() => setShowWorkflow(false)}
         >
           <WorkflowPanel />

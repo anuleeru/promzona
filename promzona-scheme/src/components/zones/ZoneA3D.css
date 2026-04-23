@@ -1,4 +1,4 @@
-/* ===== Zone A 3D specific styles ===== */
+﻿/* ===== Zone A 3D specific styles ===== */
 
 .zone3d-full { width: 100%; }
 
@@ -14,7 +14,7 @@
 
 /* Roads */
 .za-road {
-  background: #2d3340;
+  background: #0f1826;
   border: 1px solid #4B556333;
   border-radius: 3px;
   position: relative;
@@ -46,7 +46,7 @@
 .za-dash-h {
   width: 20px;
   height: 3px;
-  background: #F59E0B66;
+  background: #93c5fd66;
   border-radius: 1px;
 }
 .za-road-dashes-v {
@@ -59,7 +59,7 @@
 .za-dash-v {
   width: 3px;
   height: 16px;
-  background: #F59E0B66;
+  background: #93c5fd66;
   border-radius: 1px;
 }
 .za-road-truck {
@@ -81,7 +81,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.68rem;
-  color: #666d99;
+  color: #485f7a;
 }
 .za-road-label-right {
   position: absolute;
@@ -89,7 +89,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.68rem;
-  color: #8B5CF6;
+  color: #60a5fa;
   font-weight: 700;
 }
 
@@ -118,7 +118,7 @@
 }
 .za-lane-hint {
   font-size: 0.55rem;
-  color: #666d99;
+  color: #485f7a;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -143,7 +143,7 @@
 .za-barrier-pole-h {
   width: 8px;
   height: 28px;
-  background: linear-gradient(180deg, #EF4444, #7F1D1D);
+  background: linear-gradient(180deg, #4b9eff, #1a3a80);
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
 }
@@ -151,7 +151,7 @@
   width: 320px;
   max-width: 60vw;
   height: 7px;
-  background: repeating-linear-gradient(90deg, #EF4444 0px, #EF4444 12px, #fff 12px, #fff 20px);
+  background: repeating-linear-gradient(90deg, #4b9eff 0px, #4b9eff 12px, #fff 12px, #fff 20px);
   border-radius: 3px;
   animation: barrierPulse 3s infinite;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -163,7 +163,7 @@
 .za-barrier-label-h {
   font-size: 0.68rem;
   font-weight: 700;
-  color: #EF4444;
+  color: #4b9eff;
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -178,15 +178,15 @@
   padding: 6px 14px;
   font-size: 0.72rem;
   font-weight: 700;
-  background: #1e3050;
-  border: 1px solid #3B82F655;
+  background: #0d1830;
+  border: 1px solid #4b9eff55;
   border-radius: 6px;
   color: #60a5fa;
   cursor: pointer;
   transition: all 0.15s;
 }
 .za-cam:hover { background: #243a60; transform: scale(1.05); }
-.za-cam-qr { background: #2d1f54; border-color: #8B5CF655; color: #a78bfa; }
+.za-cam-qr { background: #2d1f54; border-color: #60a5fa55; color: #93c5fd; }
 .za-cam-qr:hover { background: #3a2870; }
 
 /* Main area — top view layout */
@@ -197,8 +197,8 @@
   width: 100%;
   max-width: 800px;
   min-height: 400px;
-  background: #141824;
-  border: 2px solid #3B82F622;
+  background: #0a0d18;
+  border: 2px solid #4b9eff22;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -217,22 +217,22 @@
 }
 .za-container-top:hover { background: #1a2040; }
 .za-container-left {
-  background: #15223a;
-  border-right: 2px solid #3B82F644;
+  background: #0d1830;
+  border-right: 2px solid #4b9eff44;
 }
 .za-container-right {
-  background: #1f1a10;
-  border-left: 2px solid #F59E0B44;
+  background: #0d1220;
+  border-left: 2px solid #93c5fd44;
 }
 .za-ct-floor {
   padding: 10px;
   border-radius: 6px;
   font-size: 0.72rem;
-  color: #9ba3c7;
+  color: #7a98bc;
   text-align: center;
 }
-.za-container-left .za-ct-floor { background: #1a2e50; border: 1px solid #3B82F633; }
-.za-container-right .za-ct-floor { background: #2a1e0a; border: 1px solid #F59E0B33; }
+.za-container-left .za-ct-floor { background: #0d1830; border: 1px solid #4b9eff33; }
+.za-container-right .za-ct-floor { background: #2a1e0a; border: 1px solid #93c5fd33; }
 .za-ct-label {
   font-size: 0.62rem;
   font-weight: 800;
@@ -242,11 +242,11 @@
   margin-top: auto;
   padding-top: 8px;
 }
-.za-container-left .za-ct-label { color: #3B82F6; }
-.za-container-right .za-ct-label { color: #F59E0B; }
+.za-container-left .za-ct-label { color: #4b9eff; }
+.za-container-right .za-ct-label { color: #93c5fd; }
 .za-ct-click {
   font-size: 0.6rem;
-  color: #F59E0B;
+  color: #93c5fd;
   text-align: center;
   opacity: 0.6;
   animation: blinky 2s infinite;
@@ -272,14 +272,14 @@
 }
 .za-scale-surface {
   padding: 16px 24px;
-  background: #0d2520;
-  border: 2px dashed #10B981;
+  background: #0a1020;
+  border: 2px dashed #4b9eff;
   border-radius: 8px;
   font-size: 0.82rem;
   font-weight: 800;
-  color: #10B981;
+  color: #4b9eff;
   text-align: center;
-  box-shadow: 0 0 20px rgba(16,185,129,0.15);
+  box-shadow: 0 0 20px rgba(37,99,235,0.1);
 }
 .za-truck-on {
   position: absolute;
@@ -300,9 +300,9 @@
   padding: 40px 20px 20px;
   min-height: 400px;
   width: 100%;
-  background: linear-gradient(180deg, #0f1320 0%, #141824 60%, #1a1f2e 100%);
+  background: linear-gradient(180deg, #0f1320 0%, #0a0d18 60%, #1a1f2e 100%);
   border-radius: 12px;
-  border: 1px solid #3B82F622;
+  border: 1px solid #4b9eff22;
 }
 
 /* Front container stacks */
@@ -320,15 +320,15 @@
 .za-fc-2fl { border-top: 3px solid; border-radius: 8px 8px 0 0; }
 .za-fc-1fl { border-radius: 0 0 8px 8px; }
 .za-fc-left {
-  background: #15223a;
-  border: 1px solid #3B82F644;
+  background: #0d1830;
+  border: 1px solid #4b9eff44;
 }
-.za-fc-left.za-fc-2fl { border-top-color: #3B82F6; }
+.za-fc-left.za-fc-2fl { border-top-color: #4b9eff; }
 .za-fc-right {
-  background: #1f1a10;
-  border: 1px solid #F59E0B44;
+  background: #0d1220;
+  border: 1px solid #93c5fd44;
 }
-.za-fc-right.za-fc-2fl { border-top-color: #F59E0B; }
+.za-fc-right.za-fc-2fl { border-top-color: #93c5fd; }
 .za-fc-label {
   font-size: 0.62rem;
   font-weight: 800;
@@ -336,8 +336,8 @@
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-.za-fc-left .za-fc-label { color: #3B82F6; }
-.za-fc-right .za-fc-label { color: #F59E0B; }
+.za-fc-left .za-fc-label { color: #4b9eff; }
+.za-fc-right .za-fc-label { color: #93c5fd; }
 .za-fc-rooms {
   display: flex;
   gap: 4px;
@@ -347,12 +347,12 @@
   padding: 8px;
   border-radius: 5px;
   font-size: 0.62rem;
-  color: #9ba3c7;
+  color: #7a98bc;
   text-align: center;
   line-height: 1.4;
 }
-.za-fc-left .za-fc-room { background: #1a2e50; border: 1px solid #3B82F622; }
-.za-fc-right .za-fc-room { background: #2a1e0a; border: 1px solid #F59E0B22; }
+.za-fc-left .za-fc-room { background: #0d1830; border: 1px solid #4b9eff22; }
+.za-fc-right .za-fc-room { background: #2a1e0a; border: 1px solid #93c5fd22; }
 
 /* Front center — road + scale + barrier under + exit */
 .za-front-center {
@@ -366,7 +366,7 @@
 .za-front-road {
   width: 100px;
   height: 300px;
-  background: #2d3340;
+  background: #0f1826;
   border: 1px solid #4B556333;
   border-radius: 4px 4px 0 0;
   display: flex;
@@ -379,11 +379,11 @@
 .za-front-scale {
   font-size: 1rem;
   font-weight: 800;
-  color: #10B981;
+  color: #4b9eff;
   padding: 10px;
-  border: 2px dashed #10B981;
+  border: 2px dashed #4b9eff;
   border-radius: 6px;
-  background: #0d2520;
+  background: #0a1020;
 }
 .za-front-truck {
   font-size: 2.5rem;
@@ -398,8 +398,8 @@
   gap: 4px;
   width: 100px;
   padding: 8px 0;
-  background: #1c1015;
-  border: 1px solid #EF444444;
+  background: #0d1220;
+  border: 1px solid #4b9eff44;
   border-radius: 0 0 6px 6px;
 }
 .za-fbu-row {
@@ -410,7 +410,7 @@
 .za-fbu-arm {
   width: 70px;
   height: 5px;
-  background: repeating-linear-gradient(90deg, #EF4444 0px, #EF4444 8px, #fff 8px, #fff 14px);
+  background: repeating-linear-gradient(90deg, #4b9eff 0px, #4b9eff 8px, #fff 8px, #fff 14px);
   border-radius: 2px;
   animation: barrierPulse 3s infinite;
 }
@@ -421,13 +421,13 @@
 .za-fbu-pole {
   width: 6px;
   height: 24px;
-  background: linear-gradient(180deg, #EF4444, #7F1D1D);
+  background: linear-gradient(180deg, #4b9eff, #1a3a80);
   border-radius: 3px;
 }
 .za-fbu-label {
   font-size: 0.58rem;
   font-weight: 700;
-  color: #EF4444;
+  color: #4b9eff;
   white-space: nowrap;
 }
 
@@ -441,7 +441,7 @@
 }
 .za-fel-arrow {
   font-size: 1.2rem;
-  color: #8B5CF6;
+  color: #60a5fa;
   animation: arrowDown 1.5s infinite;
 }
 @keyframes arrowDown {
@@ -451,7 +451,7 @@
 .za-fel-text {
   font-size: 0.72rem;
   font-weight: 700;
-  color: #8B5CF6;
+  color: #60a5fa;
   white-space: nowrap;
 }
 
@@ -468,8 +468,8 @@
   animation: fadeIn 0.15s ease;
 }
 .za-detail-panel {
-  background: #1a1e2e;
-  border: 2px solid #F59E0B44;
+  background: #090c16;
+  border: 2px solid #93c5fd44;
   border-radius: 16px;
   width: 700px;
   max-width: 95vw;
@@ -483,34 +483,34 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  border-bottom: 1px solid #2e3450;
+  border-bottom: 1px solid #1c2b44;
   font-size: 0.92rem;
   font-weight: 700;
-  color: #F59E0B;
+  color: #93c5fd;
 }
 .za-dp-close {
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  background: #2a2f45;
-  border: 1px solid #3d4463;
-  color: #9ba3c7;
+  background: #0d1220;
+  border: 1px solid #1c2b44;
+  color: #7a98bc;
   font-size: 0.8rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.za-dp-close:hover { background: #3d4463; color: #fff; }
+.za-dp-close:hover { background: #1c2b44; color: #fff; }
 
 .za-dp-floor {
   padding: 20px 24px;
-  border-bottom: 1px solid #2e3450;
+  border-bottom: 1px solid #1c2b44;
 }
 .za-dp-floor-label {
   font-size: 0.72rem;
   font-weight: 800;
-  color: #F59E0B;
+  color: #93c5fd;
   letter-spacing: 0.08em;
   margin-bottom: 12px;
 }
@@ -522,17 +522,17 @@
   flex: 1;
   padding: 16px;
   border-radius: 10px;
-  border: 1px solid #3d4463;
-  background: #232838;
+  border: 1px solid #1c2b44;
+  background: #111828;
 }
 .za-dp-zone-icon { font-size: 1.5rem; margin-bottom: 8px; }
-.za-dp-zone-name { font-size: 0.82rem; font-weight: 700; color: #e8eaf6; margin-bottom: 4px; }
-.za-dp-zone-desc { font-size: 0.7rem; color: #9ba3c7; line-height: 1.5; }
+.za-dp-zone-name { font-size: 0.82rem; font-weight: 700; color: #f0f4ff; margin-bottom: 4px; }
+.za-dp-zone-desc { font-size: 0.7rem; color: #7a98bc; line-height: 1.5; }
 
-.za-dp-zone-server { border-left: 3px solid #3B82F6; }
-.za-dp-zone-store  { border-left: 3px solid #8B5CF6; }
-.za-dp-zone-guard  { border-left: 3px solid #10B981; }
-.za-dp-zone-1c     { border-left: 3px solid #F59E0B; }
+.za-dp-zone-server { border-left: 3px solid #4b9eff; }
+.za-dp-zone-store  { border-left: 3px solid #60a5fa; }
+.za-dp-zone-guard  { border-left: 3px solid #4b9eff; }
+.za-dp-zone-1c     { border-left: 3px solid #93c5fd; }
 
 /* Arrow between floors */
 .za-dp-arrow {
@@ -544,7 +544,7 @@
 }
 .za-dp-arrow-icon {
   font-size: 1.5rem;
-  color: #10B981;
+  color: #4b9eff;
   animation: arrowPulse 1.5s infinite;
 }
 @keyframes arrowPulse {
@@ -553,7 +553,7 @@
 }
 .za-dp-arrow-text {
   font-size: 0.78rem;
-  color: #10B981;
+  color: #4b9eff;
   font-weight: 600;
 }
 
@@ -567,10 +567,10 @@
 .za-dp-output-item {
   padding: 8px 12px;
   background: #1a2535;
-  border: 1px solid #F59E0B33;
+  border: 1px solid #93c5fd33;
   border-radius: 6px;
   font-size: 0.72rem;
-  color: #F59E0B;
+  color: #93c5fd;
   font-weight: 600;
 }
 
@@ -580,10 +580,10 @@
   align-items: center;
   gap: 12px;
   padding: 16px 24px;
-  background: #0d2520;
-  border-top: 2px solid #10B98133;
+  background: #0a1020;
+  border-top: 2px solid #4b9eff33;
   border-radius: 0 0 14px 14px;
 }
 .za-dp-result-icon { font-size: 1.5rem; }
-.za-dp-result-text { font-size: 0.78rem; color: #9ba3c7; line-height: 1.5; }
-.za-dp-result-text strong { color: #8B5CF6; }
+.za-dp-result-text { font-size: 0.78rem; color: #7a98bc; line-height: 1.5; }
+.za-dp-result-text strong { color: #60a5fa; }

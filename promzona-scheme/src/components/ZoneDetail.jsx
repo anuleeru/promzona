@@ -1,11 +1,14 @@
-import ZoneADetail from './zones/ZoneADetail'
+﻿import ZoneADetail from './zones/ZoneADetail'
 import ZoneBDetail from './zones/ZoneBDetail'
 import ZoneCDetail from './zones/ZoneCDetail'
 import ZoneDDetail from './zones/ZoneDDetail'
+import ZoneWaitDetail from './zones/ZoneWaitDetail'
+import ZoneEDetail from './zones/ZoneEDetail'
+import ZoneTopDetail from './zones/ZoneTopDetail'
 import { ZONES } from '../data/zones'
 import './ZoneDetail.css'
 
-const VIEWS = { A: ZoneADetail, B: ZoneBDetail, C: ZoneCDetail, D: ZoneDDetail }
+const VIEWS = { A: ZoneADetail, B: ZoneBDetail, C: ZoneCDetail, D: ZoneDDetail, Wait: ZoneWaitDetail, E: ZoneEDetail, Top: ZoneTopDetail }
 
 export default function ZoneDetail({ zoneId, onClose }) {
   const zone = ZONES[zoneId]

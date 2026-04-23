@@ -1,10 +1,10 @@
-/* =======================================================
+﻿/* =======================================================
    Zone 3D CSS — isometric & perspective views
    ======================================================= */
 
 .zone3d { display: flex; flex-direction: column; gap: 20px; }
 
-/* ---- ISO CONTAINER — the 3D wrapper ---- */
+/* ---- ISO CONTAINER ---- */
 .iso-container {
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -32,8 +32,8 @@
 }
 
 .road-surface {
-  background: #2d3340;
-  border: 1px solid #4B556344;
+  background: #0f1826;
+  border: 1px solid #1c2b4444;
   position: relative;
   overflow: hidden;
 }
@@ -66,7 +66,7 @@
 .dash {
   width: 4px;
   height: 14px;
-  background: #F59E0B88;
+  background: #243652;
   border-radius: 1px;
 }
 .dash-h {
@@ -92,9 +92,9 @@
   bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  color: #8B5CF6;
+  color: #60a5fa;
   white-space: nowrap;
   letter-spacing: 0.04em;
 }
@@ -111,13 +111,13 @@
 .barrier-pole {
   width: 6px;
   height: 36px;
-  background: linear-gradient(180deg, #EF4444, #7F1D1D);
+  background: #1c2b44;
   border-radius: 3px;
 }
 .barrier-arm {
   width: 80px;
   height: 5px;
-  background: repeating-linear-gradient(90deg, #EF4444 0px, #EF4444 8px, #fff 8px, #fff 16px);
+  background: repeating-linear-gradient(90deg, #2563eb 0px, #2563eb 8px, #f0f4ff 8px, #f0f4ff 16px);
   border-radius: 2px;
   transform-origin: left center;
   animation: barrierBounce 4s infinite ease-in-out;
@@ -127,13 +127,15 @@
   30%, 70% { transform: rotate(-80deg); }
 }
 .barrier-label {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
-  color: #EF4444;
+  color: #4b9eff;
   text-align: center;
   margin-top: 4px;
   line-height: 1.3;
   white-space: nowrap;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* ---- CAMERA ELEMENTS ---- */
@@ -157,22 +159,23 @@
 .cam-body {
   width: 36px;
   height: 36px;
-  border-radius: 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
 }
-.cam-anpr .cam-body { background: #1e3a5f; border: 1px solid #3B82F670; }
-.cam-qr .cam-body   { background: #2d1f54; border: 1px solid #8B5CF670; }
+.cam-anpr .cam-body { background: #0d1830; border: 1px solid #2563eb55; }
+.cam-qr .cam-body   { background: #0d1430; border: 1px solid #1a3a8055; }
 
 .cam-label {
-  font-size: 0.55rem;
+  font-size: 0.54rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
-.cam-anpr .cam-label { color: #60a5fa; }
-.cam-qr .cam-label   { color: #a78bfa; }
+.cam-anpr .cam-label { color: #4b9eff; }
+.cam-qr .cam-label   { color: #60a5fa; }
 .cam-exit-top { position: absolute; top: -20px; left: -50px; }
 
 /* ---- ZONE A GROUND ---- */
@@ -181,13 +184,12 @@
   align-items: stretch;
   gap: 8px;
   padding: 16px;
-  background: #141824;
-  border: 2px solid #3B82F633;
-  border-radius: 12px;
+  background: #0a0d18;
+  border: 1px solid #1c2b44;
+  border-radius: 8px;
   position: relative;
   min-width: 650px;
   min-height: 260px;
-  box-shadow: 0 0 40px rgba(59,130,246,0.12);
 }
 
 /* ---- CONTAINER STACKS ---- */
@@ -201,78 +203,66 @@
 
 .container-box {
   position: relative;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 10px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   transform-style: preserve-3d;
 }
 .container-box:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-/* Floor 2 stacks on top */
-.floor2 { border-top: 3px solid; z-index: 2; }
+.floor2 { border-top: 2px solid; z-index: 2; }
 .floor1 { z-index: 1; }
 
 .left-c {
-  background: #15223a;
-  border: 1px solid #3B82F644;
+  background: #0d1830;
+  border: 1px solid #2563eb33;
 }
-.left-c.floor2 { border-top-color: #3B82F6; }
+.left-c.floor2 { border-top-color: #2563eb; }
 
 .right-c {
-  background: #1f1a10;
-  border: 1px solid #F59E0B44;
+  background: #0d1428;
+  border: 1px solid #1a3a8033;
 }
-.right-c.floor2 { border-top-color: #F59E0B; }
+.right-c.floor2 { border-top-color: #2563eb; }
 
 .c-label {
-  font-size: 0.58rem;
+  font-size: 0.56rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
-.left-c .c-label { color: #3B82F6; }
-.right-c .c-label { color: #F59E0B; }
+.left-c .c-label  { color: #4b9eff; }
+.right-c .c-label { color: #93c5fd; }
 
-.c-rooms {
-  display: flex;
-  gap: 4px;
-}
+.c-rooms { display: flex; gap: 4px; }
 .c-room {
   flex: 1;
   padding: 8px 6px;
-  border-radius: 5px;
-  font-size: 0.6rem;
+  border-radius: 4px;
+  font-size: 0.58rem;
   line-height: 1.4;
-  color: #9ba3c7;
+  color: #7a98bc;
   text-align: center;
   position: relative;
-  border: 1px solid #2e345044;
+  border: 1px solid #1c2b4433;
 }
-.c-room-server { background: #1a2545; }
-.c-room-cam    { background: #1a2040; border-left: 2px solid #3B82F6; }
-.c-room-tech   { background: #1a2035; }
-.c-room-store  { background: #1e1a10; }
-.c-room-pass   { background: #1e1a15; border-left: 2px solid #F59E0B; }
-.c-room-1c     { background: #1e1a10; border-left: 2px solid #F59E0B; }
-.c-room-window { background: #1d1912; }
+.c-room-server { background: #0d1428; }
+.c-room-cam    { background: #0d1830; border-left: 2px solid #2563eb; }
+.c-room-tech   { background: #0a1020; }
+.c-room-store  { background: #0d1220; }
+.c-room-pass   { background: #0d1428; border-left: 2px solid #2563eb; }
+.c-room-1c     { background: #0d1220; border-left: 2px solid #60a5fa; }
+.c-room-window { background: #0a1020; }
 
-.cam-mounted {
-  font-size: 1rem;
-  display: block;
-  margin-bottom: 3px;
-}
-.monitor-icon, .desk-icon {
-  font-size: 0.9rem;
-  display: block;
-  margin-top: 3px;
-}
+.cam-mounted { font-size: 1rem; display: block; margin-bottom: 3px; }
+.monitor-icon, .desk-icon { font-size: 0.9rem; display: block; margin-top: 3px; }
 
-/* 3D side faces (hint of depth) */
+/* 3D side faces */
 .container-side-face {
   position: absolute;
   top: 4px;
@@ -282,13 +272,13 @@
 }
 .left-face {
   left: -8px;
-  background: #0f1a2e;
-  border: 1px solid #3B82F633;
+  background: #06090f;
+  border: 1px solid #1c2b4433;
 }
 .right-face {
   right: -8px;
-  background: #17130a;
-  border: 1px solid #F59E0B33;
+  background: #06090f;
+  border: 1px solid #1c2b4433;
 }
 .container-top-face {
   position: absolute;
@@ -298,8 +288,8 @@
   height: 6px;
   border-radius: 4px 4px 0 0;
 }
-.left-c .container-top-face { background: #1a2e50; border: 1px solid #3B82F633; }
-.right-c .container-top-face { background: #2a1e0a; border: 1px solid #F59E0B33; }
+.left-c .container-top-face  { background: #0d1830; border: 1px solid #2563eb22; }
+.right-c .container-top-face { background: #0d1428; border: 1px solid #1a3a8022; }
 
 /* ---- CENTER AREA / SCALE ---- */
 .center-area {
@@ -318,16 +308,14 @@
   width: 160px;
   padding: 14px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: transform 0.2s;
 }
-.scale-platform:hover {
-  transform: translateY(-2px);
-}
+.scale-platform:hover { transform: translateY(-2px); }
 
 .scale-surface {
-  background: #0d2520;
-  border: 2px dashed #10B981;
-  border-radius: 8px;
+  background: #0a1020;
+  border: 1px dashed #2563eb;
+  border-radius: 6px;
   padding: 16px 12px;
   text-align: center;
   position: relative;
@@ -342,27 +330,25 @@
 .scale-mark {
   flex: 1;
   height: 3px;
-  background: #10B98144;
+  background: #2563eb33;
   border-radius: 1px;
 }
-.scale-icon {
-  font-size: 1.5rem;
-  margin-bottom: 4px;
-}
+.scale-icon { font-size: 1.5rem; margin-bottom: 4px; }
 .scale-text {
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #10B981;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #4b9eff;
   line-height: 1.3;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .scale-side-face {
   position: absolute;
   left: 8px; right: 8px;
   bottom: -6px;
   height: 6px;
-  background: #081a15;
-  border: 1px solid #10B98133;
+  background: #060810;
+  border: 1px solid #1c2b44;
   border-radius: 0 0 4px 4px;
 }
 
@@ -373,28 +359,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.3;
 }
-.truck-body-3d {
-  display: flex;
-  align-items: flex-end;
-  gap: 2px;
-}
-.truck-cab {
-  font-size: 2rem;
-}
+.truck-body-3d { display: flex; align-items: flex-end; gap: 2px; }
+.truck-cab { font-size: 2rem; }
 .truck-trailer {
   width: 60px;
   height: 24px;
-  background: #37415133;
-  border: 1px solid #4B556333;
+  background: #1c2b4422;
+  border: 1px solid #1c2b4444;
   border-radius: 2px;
 }
 
-/* ---- INFO PANEL at bottom ---- */
-.zone3d-info {
-  margin-top: 8px;
-}
+/* ---- INFO PANEL ---- */
+.zone3d-info { margin-top: 8px; }
 .z3d-info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -404,11 +382,11 @@
   display: flex;
   gap: 10px;
   padding: 12px;
-  background: #1e2235;
-  border: 1px solid #3d4463;
-  border-radius: 8px;
+  background: #0e1422;
+  border: 1px solid #1c2b44;
+  border-radius: 6px;
   align-items: flex-start;
 }
 .z3d-ic-icon { font-size: 1.2rem; flex-shrink: 0; padding-top: 2px; }
-.z3d-ic-title { font-size: 0.78rem; font-weight: 700; color: #e8eaf6; margin-bottom: 4px; }
-.z3d-ic-text { font-size: 0.7rem; color: #9ba3c7; line-height: 1.45; }
+.z3d-ic-title { font-size: 0.76rem; font-weight: 700; color: #f0f4ff; margin-bottom: 4px; letter-spacing: 0.02em; }
+.z3d-ic-text { font-size: 0.68rem; color: #7a98bc; line-height: 1.5; }
