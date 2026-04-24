@@ -738,11 +738,11 @@ export const SYSTEM_EQUIPMENT = {
         location: 'Контейнер правый, 2-й этаж (серверная комната, Зона А)',
         purpose: 'Хранение БД рейсов, очередей и весовых данных. Обработка ANPR/QR/ШЛАГБАУМОВ в реальном времени. Управление электронной очередью, LED-экраном, шлагбаумами. Синхронизация с ЦУК&Л Кыргызкомур и АИС.',
         specs: {
-          cpu: 'Intel Xeon E-2300 / AMD EPYC (4‖8 ядер)',
-          ram: '64 ГБ ECC DDR4',
-          storage: 'SSD 1 ТБ (ОС + АИС) + HDD 4×2 ТБ (видеоархив NVR)',
-          network: '2×10GbE SFP+ (агрегация к MikroTik)',
-          os: 'Linux Server (Debian / Ubuntu LTS)',
+          cpu: '',
+          ram: '',
+          storage: '',
+          network: '',
+          os: '',
           ups: 'UPS-A-2 (ИБП серверной)',
         },
         software: [
